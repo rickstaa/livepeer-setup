@@ -1,0 +1,18 @@
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=<user e.g. root>
+Restart=always
+RestartSec=5
+ExecStart=<PATH_TO_PROMETHEUS>/prometheus \
+    --config.file=/<PATH_TO_PROMETHEUS>/prometheus.yml \
+    --storage.tsdb.path=<PATH_TO_PROMETHEUS>/data \
+    --web.console.templates=<PATH_TO_PROMETHEUS>/consoles \
+    --web.console.libraries=<PATH_TO_PROMETHEUS>/console_libraries
+
+[Install]
+WantedBy=multi-user.target
