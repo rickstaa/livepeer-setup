@@ -2,46 +2,58 @@
 
 This repository contains all the files I use in my [LivePeer](https://livepeer.org/) setup.
 
+## Transcoding
+
+### Pools
+
+- https://www.livepool.io/
+- https://titan-node.com/
+
 ## Monitoring
 
 For monitoring my Orchestrator/Transcoder I use extended the setup that was given in this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana).
 
 ## Monitor PSU
 
-If you have a corsair I series PSU you can also monitor it using [this Grafana dashboard](https://grafana.com/grafana/dashboards/12101). For this dashboard to work you first have to install the [lm-sensors](https://github.com/lm-sensors/lm-sensors) package and the [corsairpsu](https://github.com/Benzhaomin/corsairpsu) module.
+I also monitor my corsair HX1200i PSU using the [liquidctl](https://github.com/liquidctl/liquidctl) utility. I had to install this utility using pip since the snap version has a permission bug. I then used the [liquidctl-exporter](https://github.com/paha/liquidctl-exporter) to export the data for Grafana. When doing this you have to make sure
+the `LIQUIDCTL_EXPORTER_PATH` environmental variable points to the Liquidctl executable (i.e. `LIQUIDCTL_EXPORTER_PATH="/home/ricks/.local/bin/liquidctl"`).
 
 ### Start main monitoring services
 
-You can start the required monitoring services by using [systemd](https://grafana.com/docs/grafana/latest/installation/debian/#start-the-server-with-systemd). To do so fill in and move the `services/nvidia_exporter_template.service`, `prometheus_template.service` to your `/etc/systemd/system` folder. The service files for Grafana are already created during the Grafana installation.
+You can start the required monitoring services by using [systemd](https://grafana.com/docs/grafana/latest/installation/debian/#start-the-server-with-systemd). To do so fill in and move the `services/nvidia_exporter_template.service`, `prometheus_template.service` to your `/etc/systemd/system` folder. The service files for Grafana are already created during the Grafana installation. Please use `sudo systemctl daemon-reload` if you decide to change configuration files when the deamon is running.
+
+#### Start Prometheus
+
+To start [prometheus](https://prometheus.io/) use the following commands:
+
+```bash
+sudo systemctl start prometheus.service
+sudo systemctl status prometheus.service
+```
 
 #### Start Grafana
 
 To [start Grafana](https://grafana.com/docs/grafana/latest/installation/debian/#start-the-server-with-systemd) use the following commands:
 
 ```bash
-sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl status grafana-server
 ```
 
-#### Start Prometheus
+#### Start Nvidia-exporter
 
-To prometheus use the following commands:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start prometheus.service
-sudo systemctl status prometheus.service
-```
-
-#### Start Nvidia_exporter
-
-To the nvidia_exporter tool use the following commands:
+To start the `nvidia-exporter` tool use the following commands:
 
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl start nvidia_exporter.service
-sudo systemctl status nvidia_exporter.service
+sudo systemctl start nvidia-exporter.service
+sudo systemctl status nvidia-exporter.service
 ```
 
-### Start additional power monitoring services
+### Start liquidctl-exporter
+
+To start the [liquidctl-exporter](https://github.com/paha/liquidctl-exporter) tool use the following commands:
+
+```bash
+sudo systemctl start liquidctl-exporter.service
+sudo systemctl status liquidctl-exporter.service
+```

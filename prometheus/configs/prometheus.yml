@@ -34,3 +34,7 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
     - targets: ['localhost:7935']
+  - job_name: 'liquidctl'
+    metrics_path: /metrics
+    static_configs:
+    - targets: ['localhost:9530']

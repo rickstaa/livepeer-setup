@@ -1,0 +1,11 @@
+[Unit]
+Description=Reads GPU info from nvidia-smi and publishes it on port 9101.
+
+[Service]
+User=<user e.g. root>
+WorkingDirectory=<PATH TO THE DIR THAT CONTAINS THE NVIDIA_EXPORTER SCRIPT>
+ExecStart=/usr/local/go/bin/go run nvidia_exporter.go
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
