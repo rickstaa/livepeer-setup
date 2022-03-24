@@ -40,18 +40,26 @@ sudo systemctl start grafana-server
 sudo systemctl status grafana-server
 ```
 
-#### Start Nvidia-exporter
+#### Start dcgm-exporter
 
-To start the `nvidia-exporter` tool use the following commands:
+To start the [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter) tool use the following commands:
 
 ```bash
-sudo systemctl start nvidia-exporter.service
-sudo systemctl status nvidia-exporter.service
+docker run -d --gpus all --rm -p 9400:9400 nvcr.io/nvidia/k8s/dcgm-exporter:2.3.5-2.6.5-ubuntu20.04
 ```
 
 ### Start liquidctl-exporter
 
 To start the [liquidctl-exporter](https://github.com/paha/liquidctl-exporter) tool use the following commands:
+
+```bash
+sudo systemctl start liquidctl-exporter.service
+sudo systemctl status liquidctl-exporter.service
+```
+
+### Start node-exporter
+
+To start the [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation) tool use the following commands:
 
 ```bash
 sudo systemctl start liquidctl-exporter.service
