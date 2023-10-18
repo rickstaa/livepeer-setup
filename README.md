@@ -19,7 +19,7 @@ My monitoring setup is based on the configuration presented in this insightful [
 - [Prometheus](https://prometheus.io/): Data storage for monitoring.
 - [Grafana](https://grafana.com): Visualization of monitoring data.
 - [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter): Monitoring for my Nvidia GPU.
-- [liquidctl](https://github.com/liquidctl/liquidctl) and [liquidctl-exporter](https://github.com/paha/liquidctl-exporter): Monitoring for my Corsair HX1200i PSU.
+- [liquidctl](https://github.com/liquidctl/liquidctl) and [liquidctl-exporter](https://github.com/paha/liquidctl-exporter): Monitoring for my [Corsair HX1200i PSU](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na).
 - [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation): System statistics monitoring.
 
 ### Usage
