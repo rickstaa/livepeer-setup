@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  prometheus:
+    image: quay.io/prometheus/prometheus
+    container_name: prometheus
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - 9090:9090
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.size=10GB" # Comment this line to revert back to the default retention size.
+      - "--storage.tsdb.retention.time=1y" # Comment this line to revert back to the default retention time.
+      # - "--web.enable-admin-api" # Uncomment this line if you want to take snapshots through the API.
+    restart: unless-stopped
+    network_mode: host
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana_data:/var/lib/grafana
+    ports:
+      - 3000:3000
+    environment:
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/var/lib/grafana/dashboards/psu_overview.json"
+    restart: unless-stopped
+    network_mode: host
+
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
+    network_mode: host
+
+  dcgm-exporter:
+    image: nvcr.io/nvidia/k8s/dcgm-exporter:3.2.5-3.1.8-ubuntu20.04
+    container_name: dcgm-exporter
+    ports:
+      - "9400:9400"
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    restart: unless-stopped
+    network_mode: host
+
+  liquidctl-exporter:
+    build:
+      context: ./exporters/liquidctl-exporter
+    image: liquidctl-exporter
+    container_name: liquidctl-exporter
+    ports:
+      - "9530:9530"
+    privileged: true
+    restart: unless-stopped
+    network_mode: host
+
+volumes:
+  portainer_data:
+  prometheus_data:
+  grafana_data:

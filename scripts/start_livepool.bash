@@ -1,1 +1,1 @@
-./livepool -ethAcctAddr 0x455A304A1D3342844f4Dd36731f8da066eFdd30B -nvidia 0 -monitor
+../LivePool/0.5.28-80b8f968_livepool-linux-amd64/livepool-linux-amd64/livepool -ethAcctAddr 0x2390f4d31cB118fB23De052754549F1f325497C1 -nvidia 0 -monitor

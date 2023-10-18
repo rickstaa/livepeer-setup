@@ -3,30 +3,141 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
-        "target": {
-          "limit": 100,
-          "matchAny": false,
-          "tags": [],
-          "type": "dashboard"
-        },
         "type": "dashboard"
       }
     ]
   },
-  "description": "Information about the payments that were done by LivePeer.",
+  "description": "Contains LivePeer Payment statistics.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
     {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 32,
+      "panels": [],
+      "title": "Expense",
+      "type": "row"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 44,
+      "libraryPanel": {
+        "name": "Price",
+        "uid": "b2294c84-df02-46ad-bae2-45bb971ee9d5"
+      },
+      "title": "Price"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 34,
+      "libraryPanel": {
+        "name": "All (cost)",
+        "uid": "c87aa64f-e1b4-4e0f-91b0-1181662d4073"
+      },
+      "title": "All (cost)"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 36,
+      "libraryPanel": {
+        "name": "Year (cost)",
+        "uid": "ae622506-eb09-48e7-93af-0db44fc6dc7b"
+      },
+      "title": "Year (cost)"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 38,
+      "libraryPanel": {
+        "name": "Month (cost)",
+        "uid": "cada80fa-1336-4c6c-846a-ff4d96371bb2"
+      },
+      "title": "Month (cost)"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 40,
+      "libraryPanel": {
+        "name": "Week (cost)",
+        "uid": "fec0f2fe-3455-4391-b314-d8506561a7ef"
+      },
+      "title": "Week (cost)"
+    },
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 42,
+      "libraryPanel": {
+        "name": "Day (cost)",
+        "uid": "bce14049-6aa8-4da4-8a85-aeb2f539c089"
+      },
+      "title": "Day (cost)"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 31,
+      "panels": [],
+      "title": "Payout",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "Ticket Value received minus ticket value redeemed",
       "fieldConfig": {
         "defaults": {
@@ -52,7 +163,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 0
+        "y": 5
       },
       "id": 30,
       "links": [],
@@ -70,9 +181,13 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "(sum(livepeer_ticket_value_recv)-(sum(livepeer_value_redeemed) OR on() vector(0)))/10^9",
           "format": "time_series",
           "hide": false,
@@ -90,6 +205,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "Ticket Value received minus ticket value redeemed",
       "fill": 1,
       "fillGradient": 0,
@@ -97,7 +216,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 0
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 29,
@@ -118,7 +237,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -128,6 +247,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "(sum(livepeer_ticket_value_recv)-(sum(livepeer_value_redeemed) OR on() vector(0)))/10^9",
           "format": "time_series",
           "hide": false,
@@ -173,13 +296,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 0
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 6,
@@ -200,7 +327,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -210,6 +337,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "sum(livepeer_tickets_recv)",
           "format": "time_series",
           "interval": "",
@@ -254,13 +385,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 8
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 22,
@@ -281,7 +416,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -291,6 +426,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "sum(livepeer_payment_recv_errors)",
           "format": "time_series",
           "instant": false,
@@ -336,13 +475,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 8
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 14,
@@ -363,7 +506,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -373,6 +516,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "livepeer_value_redeemed",
           "format": "time_series",
           "interval": "",
@@ -417,13 +564,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 8
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 26,
@@ -444,7 +595,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.1.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -454,6 +605,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "livepeer_ticket_redemption_errors",
           "format": "time_series",
           "intervalFactor": 1,
@@ -496,13 +651,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 16
+        "y": 21
       },
       "hiddenSeries": false,
       "id": 12,
@@ -523,7 +688,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "7.3.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -533,6 +698,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "livepeer_winning_tickets_recv",
           "format": "time_series",
           "intervalFactor": 1,
@@ -575,13 +744,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 16
+        "y": 21
       },
       "hiddenSeries": false,
       "id": 28,
@@ -602,7 +781,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "7.3.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -612,6 +791,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "livepeer_transcoding_price",
           "format": "time_series",
           "intervalFactor": 1,
@@ -654,13 +837,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 16
+        "y": 21
       },
       "hiddenSeries": false,
       "id": 2,
@@ -681,7 +874,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "7.3.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -691,6 +884,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "expr": "livepeer_suggested_gas_price",
           "format": "time_series",
           "intervalFactor": 1,
@@ -730,16 +927,24 @@
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 35,
+  "schemaVersion": 38,
   "style": "dark",
-  "tags": [
-    "LivePeer"
-  ],
+  "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "description": "The energy price in euros.",
+        "hide": 2,
+        "label": "Energy Price",
+        "name": "energy_price",
+        "query": "0.4",
+        "skipUrlSync": false,
+        "type": "constant"
+      }
+    ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -770,6 +975,6 @@
   "timezone": "",
   "title": "Livepeer Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }

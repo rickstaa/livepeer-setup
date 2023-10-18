@@ -1,67 +1,46 @@
-# My LivePeer setup
+# My LivePeer Transcoding and Monitoring Setup
 
-This repository contains all the files I use in my [LivePeer](https://livepeer.org/) setup.
+Welcome to my LivePeer transcoder setup! This repository houses the configuration for my [LivePeer](https://livepeer.org/) transcoder, along with a robust monitoring system to keep tabs on both the transcoder and the overall system performance.
 
 ## Transcoding
 
-### Pools
+My setup involves connections to the following key endpoints:
 
-- https://www.livepool.io/
-- https://titan-node.com/
+- [LivePeer.org](https://livepeer.org/) (main network)
+- [LivePool](https://www.livepool.io/) (pool)
+- [TitanNode](https://titan-node.com/) (pool)
+
+For a detailed guide on setting up a LivePeer transcoder, refer to the [official LivePeer documentation](https://livepeer.org/docs/transcoding). Additionally, for instructions specific to the pools mentioned above, consult their respective documentation on their official websites.
 
 ## Monitoring
 
-For monitoring my Orchestrator/Transcoder I use extended the setup that was given in this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana).
+My monitoring setup is based on the configuration presented in this insightful [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana). It incorporates the following tools for monitoring both the transcoder and the system's performance:
 
-## Monitor PSU
+- [Prometheus](https://prometheus.io/): Data storage for monitoring.
+- [Grafana](https://grafana.com): Visualization of monitoring data.
+- [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter): Monitoring for my Nvidia GPU.
+- [liquidctl](https://github.com/liquidctl/liquidctl) and [liquidctl-exporter](https://github.com/paha/liquidctl-exporter): Monitoring for my Corsair HX1200i PSU.
+- [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation): System statistics monitoring.
 
-I also monitor my corsair HX1200i PSU using the [liquidctl](https://github.com/liquidctl/liquidctl) utility. I had to install this utility using pip since the snap version has a permission bug. I then used the [liquidctl-exporter](https://github.com/paha/liquidctl-exporter) to export the data for Grafana. When doing this you have to make sure
-the `LIQUIDCTL_EXPORTER_PATH` environmental variable points to the Liquidctl executable (i.e. `LIQUIDCTL_EXPORTER_PATH="/home/ricks/.local/bin/liquidctl"`).
+### Usage
 
-### Start main monitoring services
+For this setup to work properly, you'll need to have the following prerequisites installed on your system:
 
-You can start the required monitoring services by using [systemd](https://grafana.com/docs/grafana/latest/installation/debian/#start-the-server-with-systemd). To do so fill in and move the `services/nvidia_exporter_template.service`, `prometheus_template.service` to your `/etc/systemd/system` folder. The service files for Grafana are already created during the Grafana installation. Please use `sudo systemctl daemon-reload` if you decide to change configuration files when the deamon is running.
+- [Ubuntu 20.04](https://ubuntu.com/download/desktop) (or a higher version).
+- [Docker](https://docs.docker.com/engine/install/ubuntu/) (optional but recommended).
+- [Nvidia GPU](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3080/) (optional).
+- [Nvidia driver](https://www.nvidia.com/Download/driverResults.aspx/172837/en-us) (optional).
 
-#### Start Prometheus
+Once you have the prerequisites installed, follow these steps to get started:
 
-To start [prometheus](https://prometheus.io/) use the following commands:
+1. Clone this repository:
 
-```bash
-sudo systemctl start prometheus.service
-sudo systemctl status prometheus.service
-```
+    ```bash
+    git clone git@github.com:rickstaa/livepeer-setup.git
+    ```
 
-#### Start Grafana
+2. Run the following Docker Compose command to launch the monitoring tools:
 
-To [start Grafana](https://grafana.com/docs/grafana/latest/installation/debian/#start-the-server-with-systemd) use the following commands:
-
-```bash
-sudo systemctl start grafana-server
-sudo systemctl status grafana-server
-```
-
-#### Start dcgm-exporter
-
-To start the [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter) tool use the following commands:
-
-```bash
-docker run -d --gpus all --rm -p 9400:9400 nvcr.io/nvidia/k8s/dcgm-exporter:2.3.5-2.6.5-ubuntu20.04
-```
-
-### Start liquidctl-exporter
-
-To start the [liquidctl-exporter](https://github.com/paha/liquidctl-exporter) tool use the following commands:
-
-```bash
-sudo systemctl start liquidctl-exporter.service
-sudo systemctl status liquidctl-exporter.service
-```
-
-### Start node-exporter
-
-To start the [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation) tool use the following commands:
-
-```bash
-sudo systemctl start liquidctl-exporter.service
-sudo systemctl status liquidctl-exporter.service
-```
+    ```bash
+    docker-compose up -d
+    ```

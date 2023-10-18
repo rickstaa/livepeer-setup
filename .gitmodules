@@ -1,0 +1,3 @@
+[submodule "exporters/liquidctl-exporter"]
+	path = exporters/liquidctl-exporter
+	url = git@github.com:paha/liquidctl-exporter.git
