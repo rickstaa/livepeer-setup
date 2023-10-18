@@ -1,3 +1,3 @@
 # Scripts
 
-Contains some scripts that I use to automate some tasks.
+Contains some (template) scripts that I use in my [LivePeer](https://livepeer.org/) setup.
