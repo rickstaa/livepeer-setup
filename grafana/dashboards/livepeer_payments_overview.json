@@ -19,7 +19,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -46,7 +45,7 @@
       "id": 44,
       "libraryPanel": {
         "name": "Price",
-        "uid": "b2294c84-df02-46ad-bae2-45bb971ee9d5"
+        "uid": "cb48a9a9-85fb-4d22-af54-5b5cb6b541ce"
       },
       "title": "Price"
     },
@@ -60,7 +59,7 @@
       "id": 34,
       "libraryPanel": {
         "name": "All (cost)",
-        "uid": "c87aa64f-e1b4-4e0f-91b0-1181662d4073"
+        "uid": "f3543dbe-1ff1-456c-94e1-0db32690984c"
       },
       "title": "All (cost)"
     },
@@ -74,7 +73,7 @@
       "id": 36,
       "libraryPanel": {
         "name": "Year (cost)",
-        "uid": "ae622506-eb09-48e7-93af-0db44fc6dc7b"
+        "uid": "b47fd2df-5396-42e9-af1a-9a85eb9b2584"
       },
       "title": "Year (cost)"
     },
@@ -88,7 +87,7 @@
       "id": 38,
       "libraryPanel": {
         "name": "Month (cost)",
-        "uid": "cada80fa-1336-4c6c-846a-ff4d96371bb2"
+        "uid": "f90760ea-eab2-4d73-b47f-4966b7968035"
       },
       "title": "Month (cost)"
     },
@@ -102,7 +101,7 @@
       "id": 40,
       "libraryPanel": {
         "name": "Week (cost)",
-        "uid": "fec0f2fe-3455-4391-b314-d8506561a7ef"
+        "uid": "a8155b36-1c73-47f9-9227-4af786dfe415"
       },
       "title": "Week (cost)"
     },
@@ -116,7 +115,7 @@
       "id": 42,
       "libraryPanel": {
         "name": "Day (cost)",
-        "uid": "bce14049-6aa8-4da4-8a85-aeb2f539c089"
+        "uid": "fa6338e9-beed-45b8-831c-b6084e8b0761"
       },
       "title": "Day (cost)"
     },
@@ -929,7 +928,11 @@
   "refresh": "5s",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "livepeer",
+    "payments",
+    "orchestrator"
+  ],
   "templating": {
     "list": [
       {
@@ -975,6 +978,6 @@
   "timezone": "",
   "title": "Livepeer Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 5,
+  "version": 3,
   "weekStart": ""
 }
