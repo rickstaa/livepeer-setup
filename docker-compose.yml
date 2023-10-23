@@ -7,8 +7,6 @@ services:
     volumes:
       - prometheus_data:/prometheus
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-    ports:
-      - 9090:9090
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
@@ -57,7 +55,6 @@ services:
             - driver: nvidia
               capabilities: [gpu]
     restart: unless-stopped
-    network_mode: host
 
   liquidctl-exporter:
     build:
@@ -68,9 +65,12 @@ services:
       - "9530:9530"
     privileged: true
     restart: unless-stopped
-    network_mode: host
 
 volumes:
   portainer_data:
   prometheus_data:
   grafana_data:
+
+networks:
+  default:
+    name: livepeer
