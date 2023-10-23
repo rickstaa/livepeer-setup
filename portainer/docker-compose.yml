@@ -11,3 +11,6 @@ services:
       - 9443:9443
       - 8000:8000
     restart: unless-stopped
+
+volumes:
+  portainer_data:
