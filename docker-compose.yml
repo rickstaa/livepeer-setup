@@ -6,7 +6,7 @@ services:
     container_name: prometheus
     volumes:
       - prometheus_data:/prometheus
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - $PWD/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
@@ -20,9 +20,9 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     volumes:
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
-      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - $PWD/grafana/dashboards:/var/lib/grafana/dashboards
+      - $PWD/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - $PWD/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana_data:/var/lib/grafana
     ports:
       - 3000:3000
@@ -58,7 +58,7 @@ services:
 
   liquidctl-exporter:
     build:
-      context: ./exporters/liquidctl-exporter
+      context: $PWD/exporters/liquidctl-exporter
     image: liquidctl-exporter
     container_name: liquidctl-exporter
     ports:
