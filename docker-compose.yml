@@ -6,7 +6,9 @@ services:
     container_name: prometheus
     volumes:
       - prometheus_data:/prometheus
-      - $PWD/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - 9090:9090
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
@@ -14,22 +16,24 @@ services:
       - "--storage.tsdb.retention.time=1y" # Comment this line to revert back to the default retention time.
       # - "--web.enable-admin-api" # Uncomment this line if you want to take snapshots through the API.
     restart: unless-stopped
-    network_mode: host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
     volumes:
-      - $PWD/grafana/dashboards:/var/lib/grafana/dashboards
-      - $PWD/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - $PWD/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana_data:/var/lib/grafana
     ports:
       - 3000:3000
     environment:
       GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/var/lib/grafana/dashboards/psu_overview.json"
     restart: unless-stopped
-    network_mode: host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
@@ -58,7 +62,7 @@ services:
 
   liquidctl-exporter:
     build:
-      context: $PWD/exporters/liquidctl-exporter
+      context: ./exporters/liquidctl-exporter
     image: liquidctl-exporter
     container_name: liquidctl-exporter
     ports:

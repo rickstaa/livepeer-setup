@@ -44,3 +44,6 @@ Once you have the prerequisites installed, follow these steps to get started:
     ```bash
     docker-compose up -d
     ```
+
+> [!IMPORTANT]\
+> If your machine is equipped with the [ufw](https://help.ubuntu.com/community/UFW) firewall, it's crucial to configure it to permit incoming connections from the `livepeer` Docker subnet to localhost on the specific exporter ports you intend to access locally. For instance, using the command `sudo ufw allow in from 172.19.0.0/16 to any port 9100` will enable incoming traffic from the Docker network with the subnet 172.19.0.0/16 on port 9100.
