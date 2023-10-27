@@ -868,7 +868,7 @@
           "calcs": [],
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": false
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -885,9 +885,22 @@
           "exemplar": true,
           "expr": "liquidctl_hidraw1_estimated_input_power{}",
           "interval": "",
-          "legendFormat": "__auto",
+          "legendFormat": "signal",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "avg_over_time(liquidctl_hidraw1_estimated_input_power[1d])",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "MA (1d)",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Input Power",
@@ -964,7 +977,7 @@
           "calcs": [],
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": false
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -981,9 +994,22 @@
           "exemplar": true,
           "expr": "liquidctl_hidraw1_total_power_output{}",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "signal",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "avg_over_time(liquidctl_hidraw1_total_power_output[1d])",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "MA (1d)",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Output Power",
@@ -1390,7 +1416,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": false,
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -1411,8 +1437,8 @@
     ]
   },
   "time": {
-    "from": "now-2d",
-    "to": "now"
+    "from": "2023-10-24T16:28:58.779Z",
+    "to": "2023-10-28T16:28:58.779Z"
   },
   "timepicker": {},
   "timezone": "",
