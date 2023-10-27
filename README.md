@@ -10,28 +10,23 @@ My setup consists of the following main components:
 - GPU: 1x [NVIDIA GeForce GTX 1070 Ti](https://www.nvidia.com/en-us/geforce/news/nvidia-geforce-gtx-1070-ti/).
 - PSU: [Corsair HX1200i](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na) PSU.
 
+## System Benchmarking
+
+Evaluate the performance of your system using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Detailed instructions on how to effectively employ this tool can be found [here](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
+
+
 ## Transcoding
 
-My setup involves connections to key endpoints:
+To optimize your transcoding setup, make connections to these key endpoints:
 
 - [LivePeer.org](https://livepeer.org/) (main network)
 - [LivePool](https://www.livepool.io/) (pool)
 - [TitanNode](https://titan-node.com/) (pool)
 
-For a detailed guide on setting up a LivePeer orchestrator, refer to the [official LivePeer documentation](https://livepeer.org/docs/transcoding). Additionally, for instructions specific to the pools mentioned above, consult their respective documentation on their official websites.
-
-### Orchestrator setup
-
-#### System Benchmarking
-
-Evaluate the performance of your system using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Detailed instructions on how to effectively employ this tool can be found [here](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
-
-#### Linux setup
-
-To set up your orchestrator on Linux, refer to the step-by-step instructions provided in the [official LivePeer documentation](https://livepeer.org/docs/transcoding) or follow this comprehensive [guide](https://hedgedoc.ddvtech.com/wpwHEXMFTueUM7jqhikTvw).
+For a step-by-step guide on configuring a LivePeer orchestrator, consult the [official LivePeer documentation](https://livepeer.org/docs/transcoding). If you're using Linux, you can also follow this comprehensive [guide](https://hedgedoc.ddvtech.com/wpwHEXMFTueUM7jqhikTvw).
 
 > [!IMPORTANT]\
-> For a seamless LivePeer transcoder setup on Linux, it is crucial to use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive), as the current version of [livepeer-go](https://github.com/livepeer/go-livepeer) does not yet support [CUDA 12.x](https://developer.nvidia.com/cuda-downloads). Walk through the CUDA 11.8 installation steps outlined [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Additionally, ensure that you are using the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+> To ensure a smooth LivePeer transcoder setup on Linux, it's essential to use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive). The current version of [livepeer-go](https://github.com/livepeer/go-livepeer) does not yet support [CUDA 12.x](https://developer.nvidia.com/cuda-downloads). Follow the CUDA 11.8 installation steps outlined [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Additionally, confirm that you are using the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
 
 ## Monitoring
 
