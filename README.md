@@ -20,6 +20,10 @@ My setup involves connections to key endpoints:
 
 For a detailed guide on setting up a LivePeer transcoder, refer to the [official LivePeer documentation](https://livepeer.org/docs/transcoding). Additionally, for instructions specific to the pools mentioned above, consult their respective documentation on their official websites.
 
+### Linux Setup
+
+For a smooth LivePeer transcoder setup on Linux, use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive) as [livepeer-go](https://github.com/livepeer/go-livepeer) hasn't embraced [CUDA 12.x](https://developer.nvidia.com/cuda-downloads) yet. Follow the CUDA 11.8 installation guide [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Also, ensure you use the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+
 ## Monitoring
 
 My monitoring setup is based on the configuration presented in this insightful [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana). It incorporates the following tools for monitoring both the transcoder and the system's performance:
