@@ -20,9 +20,18 @@ My setup involves connections to key endpoints:
 
 For a detailed guide on setting up a LivePeer transcoder, refer to the [official LivePeer documentation](https://livepeer.org/docs/transcoding). Additionally, for instructions specific to the pools mentioned above, consult their respective documentation on their official websites.
 
-### Linux Setup
+### Linux Orchestrator Setup
 
-For a smooth LivePeer transcoder setup on Linux, use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive) as [livepeer-go](https://github.com/livepeer/go-livepeer) hasn't embraced [CUDA 12.x](https://developer.nvidia.com/cuda-downloads) yet. Follow the CUDA 11.8 installation guide [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Also, ensure you use the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+#### Configuring Your Orchestrator
+
+To set up your orchestrator on Linux, refer to the step-by-step instructions provided in the [official LivePeer documentation](https://livepeer.org/docs/transcoding) or follow this comprehensive [guide](https://hedgedoc.ddvtech.com/wpwHEXMFTueUM7jqhikTvw).
+
+> [!IMPORTANT]\
+> For a seamless LivePeer transcoder setup on Linux, it is crucial to use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive), as the current version of [livepeer-go](https://github.com/livepeer/go-livepeer) does not yet support [CUDA 12.x](https://developer.nvidia.com/cuda-downloads). Walk through the CUDA 11.8 installation steps outlined [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Additionally, ensure that you are using the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+
+#### System Benchmarking
+
+Evaluate the performance of your system using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Detailed instructions on how to effectively employ this tool can be found [here](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
 
 ## Monitoring
 
