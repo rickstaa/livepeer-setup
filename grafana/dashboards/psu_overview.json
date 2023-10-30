@@ -1291,7 +1291,7 @@
           "sort": "none"
         },
         "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        "xTickLabelSpacing": 100
       },
       "targets": [
         {
@@ -1416,7 +1416,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -1437,13 +1437,13 @@
     ]
   },
   "time": {
-    "from": "2023-10-24T16:28:58.779Z",
-    "to": "2023-10-28T16:28:58.779Z"
+    "from": "now-7d",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "PSU Overview",
   "uid": "WF0WESPnz",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }

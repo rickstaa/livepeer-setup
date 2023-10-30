@@ -1,6 +1,9 @@
 # IDE
 .vscode
 
+# Config files
+config/maxSessions.yml
+
 # User specific files
 scripts/start_benchmark.bash
 scripts/start_livepeer.bash

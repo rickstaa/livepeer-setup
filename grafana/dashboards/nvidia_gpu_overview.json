@@ -15,11 +15,11 @@
       }
     ]
   },
+  "description": "Contains GPU related statistics.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 6387,
   "graphTooltip": 1,
-  "id": 3,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -460,8 +460,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -562,8 +561,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -647,8 +645,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -749,8 +746,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -834,8 +830,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -936,8 +931,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -995,7 +989,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -1008,8 +1002,8 @@
     "list": []
   },
   "time": {
-    "from": "2023-10-17T21:28:27.812Z",
-    "to": "2023-10-18T21:28:27.812Z"
+    "from": "now-7d",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1038,8 +1032,7 @@
   },
   "timezone": "",
   "title": "Nvidia GPU",
-  "description": "Contains GPU related statistics.",
   "uid": "fnvhnzGmk",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
