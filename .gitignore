@@ -9,4 +9,4 @@ scripts/start_benchmark.bash
 scripts/start_livepeer.bash
 scripts/start_livepool.bash
 scripts/start_titannode_pool.bash
-script/start_livepeer_node.bash
+scripts/start_livepeer_node.bash
