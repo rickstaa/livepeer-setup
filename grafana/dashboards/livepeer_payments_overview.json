@@ -45,7 +45,7 @@
       "id": 44,
       "libraryPanel": {
         "name": "Price",
-        "uid": "cb48a9a9-85fb-4d22-af54-5b5cb6b541ce"
+        "uid": "dbb7c8ca-f2f0-4cb3-92e8-5fec66b16d03"
       },
       "title": "Price"
     },
@@ -59,7 +59,7 @@
       "id": 34,
       "libraryPanel": {
         "name": "All (cost)",
-        "uid": "f3543dbe-1ff1-456c-94e1-0db32690984c"
+        "uid": "fb0433e6-a1a3-4893-a99d-4d6ddcb80ef7"
       },
       "title": "All (cost)"
     },
@@ -73,7 +73,7 @@
       "id": 36,
       "libraryPanel": {
         "name": "Year (cost)",
-        "uid": "b47fd2df-5396-42e9-af1a-9a85eb9b2584"
+        "uid": "f03bd370-f51c-4b11-8939-b37d70cb3044"
       },
       "title": "Year (cost)"
     },
@@ -87,7 +87,7 @@
       "id": 38,
       "libraryPanel": {
         "name": "Month (cost)",
-        "uid": "f90760ea-eab2-4d73-b47f-4966b7968035"
+        "uid": "b360acbb-d53c-4d72-8b67-01b09951f2bf"
       },
       "title": "Month (cost)"
     },
@@ -101,7 +101,7 @@
       "id": 40,
       "libraryPanel": {
         "name": "Week (cost)",
-        "uid": "a8155b36-1c73-47f9-9227-4af786dfe415"
+        "uid": "a52aa42e-17f5-4d09-bdad-ad3f085ed99c"
       },
       "title": "Week (cost)"
     },
@@ -115,7 +115,7 @@
       "id": 42,
       "libraryPanel": {
         "name": "Day (cost)",
-        "uid": "fa6338e9-beed-45b8-831c-b6084e8b0761"
+        "uid": "a4a40bb4-4992-4d4f-b7b0-b262f421c142"
       },
       "title": "Day (cost)"
     },
@@ -180,7 +180,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "datasource": {
@@ -236,7 +236,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -326,7 +326,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -415,7 +415,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -505,7 +505,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -594,7 +594,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.1.5",
+      "pluginVersion": "10.2.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -927,7 +927,6 @@
   ],
   "refresh": "5s",
   "schemaVersion": 38,
-  "style": "dark",
   "tags": [
     "livepeer",
     "payments",
@@ -978,6 +977,6 @@
   "timezone": "",
   "title": "Livepeer Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }

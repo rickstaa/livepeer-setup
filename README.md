@@ -1,36 +1,48 @@
 # LivePeer Transcoding and Monitoring Setup
 
-Welcome to my LivePeer transcoder setup! This repository contains configurations for my [LivePeer](https://livepeer.org/) transcoder and a robust monitoring system to keep tabs on both the transcoder and overall system performance.
+Welcome to my LivePeer transcoder setup! This repository houses an array of Docker files, scripts, configuration files, and resources that power my [LivePeer](https://livepeer.org/) transcoder. Additionally, it includes a robust monitoring system to keep a keen eye on both the transcoder and the overall system performance.
 
 ## System Information
 
-My setup consists of the following main components:
+### Components:
 
-- OS: [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) (Kernel version: 5.15.0-86-generic).
-- GPU: 1x [NVIDIA GeForce GTX 1070 Ti](https://www.nvidia.com/en-us/geforce/news/nvidia-geforce-gtx-1070-ti/).
-- PSU: [Corsair HX1200i](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na) PSU.
+- **OS:** [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) (Kernel version: 5.15.0-86-generic).
+- **GPU:** 1x [NVIDIA GeForce GTX 1070 Ti](https://www.nvidia.com/en-us/geforce/news/nvidia-geforce-gtx-1070-ti/).
+- **PSU:** [Corsair HX1200i](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na) PSU.
 
 ## System Benchmarking
 
-Evaluate the performance of your system using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Detailed instructions on how to effectively employ this tool can be found [here](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
-
+Evaluate your system's performance using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Find detailed instructions in the [official documentation](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding) on how to employ this tool effectively.
 
 ## Transcoding
 
-To optimize your transcoding setup, make connections to these key endpoints:
+I connect my LivePeer transcoder to the following pools:
 
+- [LivePool](https://www.livepool.io/) (public pool)
+- [TitanNode](https://titan-node.com/) (public pool)
+- [video-miner](https://www.video-miner.com/) (private pool)
 - [LivePeer.org](https://livepeer.org/) (main network)
-- [LivePool](https://www.livepool.io/) (pool)
-- [TitanNode](https://titan-node.com/) (pool)
 
-For a step-by-step guide on configuring a LivePeer orchestrator, consult the [official LivePeer documentation](https://livepeer.org/docs/transcoding). If you're using Linux, you can also follow this comprehensive [guide](https://hedgedoc.ddvtech.com/wpwHEXMFTueUM7jqhikTvw).
+### Pool Setup
+
+For pool-specific setup instructions, refer to the documentation of the respective pool.
+
+### Orchestrator Setup
+
+#### On the Local Machine
+
+For a step-by-step guide on configuring a LivePeer orchestrator with the main network, consult the [official LivePeer documentation](https://docs.livepeer.org/orchestrators/guides/get-started). Linux users can also follow this comprehensive [guide](https://hedgedoc.ddvtech.com/wpwHEXMFTueUM7jqhikTvw). If you've followed the documentation correctly, you can use the `scripts/start_livepeer_node_template.bash` script to start up your orchestrator.
 
 > [!IMPORTANT]\
-> To ensure a smooth LivePeer transcoder setup on Linux, it's essential to use [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive). The current version of [livepeer-go](https://github.com/livepeer/go-livepeer) does not yet support [CUDA 12.x](https://developer.nvidia.com/cuda-downloads). Follow the CUDA 11.8 installation steps outlined [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Additionally, confirm that you are using the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+> Smooth LivePeer transcoder setup on Linux requires [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive). The current version of [livepeer-go](https://github.com/livepeer/go-livepeer) does not yet support [CUDA 12.x](https://developer.nvidia.com/cuda-downloads). Follow the CUDA 11.8 installation steps outlined [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html). Additionally, confirm that you are using the GPU version of the [livepeer-go](https://github.com/livepeer/go-livepeer) binary.
+
+#### Using Docker
+
+This repository also contains a [livepeer docker compose file](livepeer/docker-compose.yml) that you can use to run your LivePeer orchestrator. For detailed instructions, check the [README](livepeer/README.md) in the livepeer folder.
 
 ## Monitoring
 
-My monitoring setup is based on the configuration presented in this insightful [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana). It incorporates the following tools for monitoring both the transcoder and the system's performance:
+My monitoring setup follows the configuration outlined in this insightful [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana). It incorporates tools for monitoring both the transcoder and the system's performance:
 
 - [Prometheus](https://prometheus.io/): Data storage for monitoring.
 - [Grafana](https://grafana.com): Visualization of monitoring data.
@@ -38,7 +50,7 @@ My monitoring setup is based on the configuration presented in this insightful [
 - [liquidctl](https://github.com/liquidctl/liquidctl) and [liquidctl-exporter](https://github.com/paha/liquidctl-exporter): Monitoring for my [Corsair HX1200i PSU](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na).
 - [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation): System statistics monitoring.
 
-## Usage
+### Usage
 
 To get started, ensure your system meets the following prerequisites:
 
@@ -49,13 +61,13 @@ To get started, ensure your system meets the following prerequisites:
 
 Follow these steps:
 
-1. Clone this repository:
+1. **Clone this repository:**
 
    ```bash
    git clone git@github.com:rickstaa/livepeer-setup.git
    ```
 
-2. Launch the monitoring tools using Docker Compose:
+2. **Launch the monitoring tools using Docker Compose:**
 
    ```bash
    docker-compose up -d

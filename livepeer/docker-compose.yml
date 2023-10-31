@@ -1,0 +1,31 @@
+version: "3.8"
+
+name: livepeer-orchestrator
+
+services:
+  livepeer-combined-orchestrator:
+    image: livepeer/go-livepeer:0.7.1
+    container_name: "livepeer-combined-orchestrator"
+    restart: unless-stopped
+    runtime: nvidia
+    ports:
+      - 7936:7935
+      - 8935:8935
+    volumes:
+      - ./config/lporch.cfg:/root/lporch.cfg
+      - lpdata:/root/.lpData
+    command: ["-config", "/root/lporch.cfg", "-ethPassword", "/run/secrets/eth_password"]
+    secrets:
+      - eth_password
+
+volumes:
+  lpdata:
+
+networks:
+  default:
+    name: livepeer
+    external: true
+
+secrets:
+  eth_password:
+    file: ./.eth_password.txt
