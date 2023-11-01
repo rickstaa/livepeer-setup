@@ -3,4 +3,3 @@ livepeer_bench \
     -transcodingOptions transcodingOptions.json \
     -nvidia <NVIDIA_GPU_IDs> \
     -concurrentSessions <CONCURRENT_SESSIONS>
-youtuyoutyout
