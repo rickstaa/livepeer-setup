@@ -7,3 +7,6 @@
 [submodule "pools/video-miner"]
 	path = pools/video-miner
 	url = git@github.com:Video-Miner/Releases.git
+[submodule "pools/livepool"]
+	path = pools/livepool
+	url = git@github.com:Livepool-io/transcoder.git

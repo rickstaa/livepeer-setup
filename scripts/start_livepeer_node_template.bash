@@ -8,4 +8,5 @@ livepeer \
     -nvidia <NVIDIA_DEVICE_IDs> \ # Only required for transcoding with Nvidia GPUs
     -pricePerUnit <PRICE_PER_UNIT> \
     -serviceAddr <SERVICE_ADDR> \ # Hostname/IP:port
+    -maxGasPrice <MAX_GAS_PRICE> \
     -monitor
