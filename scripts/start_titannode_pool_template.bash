@@ -1,1 +1,1 @@
-../TitanNode/titan -ethAddr <ETH_ADDRESS> -nickname <NICKNAME> -maxSessions 21
+../pools/TitanNode/titan -ethAddr <ETH_ADDRESS> -nickname <NICKNAME> -maxSessions <MAX_SESSIONS>

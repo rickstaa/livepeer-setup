@@ -28,12 +28,21 @@ Once these prerequisites are in place, follow the steps below to launch your Liv
 
 5. Confirm that the orchestrator is running by executing `docker ps`.
 
-Your LivePeer orchestrator is now set to transcode on port `8935`, with the LivePeer client connecting to it on port `7936`.
+Your LivePeer orchestrator is now set to transcode on port `8935`, with the LivePeer CLI server being exposed on port `7935`.
 
 > \[WARNING]
 > Ensure that you have root access for running Docker containers on your system. If you've previously followed [this guide](https://docs.docker.com/engine/install/linux-postinstall/) to enable Docker access for non-root users, please revert the steps outlined there. Failure to do so may expose your wallet password, as unauthorized users could potentially access it.
 
-## Use a Pre-existing ETH Wallet
+### Access LivePeer CLI server from outside the container
+
+By default, you have to shell into the container to access the LivePeer CLI server. If you want to access it from outside the container, you can expose the port by uncommenting the following to the `docker-compose.yml` file:
+
+```yaml
+ports:
+  # - 7936:7935 # Make CLI server available on host.
+```
+
+### Use a Pre-existing ETH Wallet
 
 If you prefer using a pre-existing ETH wallet, follow these steps:
 

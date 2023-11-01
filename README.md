@@ -25,7 +25,7 @@ I connect my LivePeer transcoder to the following pools:
 
 ### Pool Setup
 
-For pool-specific setup instructions, refer to the documentation of the respective pool.
+For pool-specific setup instructions, refer to the documentation of the respective pool or the [README.md](pools/README.md) in the `pools` directory.
 
 ### Orchestrator Setup
 
