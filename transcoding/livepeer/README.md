@@ -13,20 +13,26 @@ Once the prerequisites are met, follow these steps to launch your LivePeer orche
 ## Steps to Brilliance
 
 1. Kick things off by renaming `config/lporch_template.cfg` to `config/lporch.cfg` and filling in the required fields.
-2. Add a `.eth_password` file to this directory and input your Ethereum wallet password.
-3. Ensure the file has the correct permissions:
+2. Add a `.eth_password.txt` file to this directory and input your Ethereum wallet password.
+3. Ensure that the root user is the file owner:
 
    ```bash
-   sudo chmod 600 .eth_password
+   sudo chown root:root .eth_password.txt
    ```
 
-4. Launch the LivePeer orchestrator using Docker Compose:
+4. Ensure the file has the correct permissions:
+
+   ```bash
+   sudo chmod 600 .eth_password.txt
+   ```
+
+5. Launch the LivePeer orchestrator using Docker Compose:
 
    ```bash
    sudo docker compose up -d
    ```
 
-5. Confirm the orchestrator is on duty by executing `docker ps`.
+6. Confirm the orchestrator is on duty by executing `docker ps`.
 
 Your LivePeer orchestrator is now ready to transcode on port `8935`, with the LivePeer CLI server exposed on port `7935`.
 
