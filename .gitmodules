@@ -2,7 +2,7 @@
 	path = monitoring/exporters/liquidctl-exporter
 	url = git@github.com:paha/liquidctl-exporter.git
 [submodule "pools/Titan-Node-Pool"]
-	path = transcoding/pools/Titan-Node-Pool
+	path = transcoding/pools/titan-node-pool
 	url = git@github.com:Titan-Node/Titan-Node-Pool.git
 [submodule "pools/video-miner"]
 	path = transcoding/pools/video-miner
