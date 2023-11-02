@@ -1,4 +1,4 @@
-# Monitoring Excellence
+# Monitoring
 
 Welcome to my LivePeer monitoring setup. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), my monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
 
