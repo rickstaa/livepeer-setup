@@ -1,12 +1,12 @@
 [submodule "exporters/liquidctl-exporter"]
-	path = exporters/liquidctl-exporter
+	path = monitoring/exporters/liquidctl-exporter
 	url = git@github.com:paha/liquidctl-exporter.git
 [submodule "pools/Titan-Node-Pool"]
-	path = pools/Titan-Node-Pool
+	path = transcoding/pools/Titan-Node-Pool
 	url = git@github.com:Titan-Node/Titan-Node-Pool.git
 [submodule "pools/video-miner"]
-	path = pools/video-miner
+	path = transcoding/pools/video-miner
 	url = git@github.com:Video-Miner/Releases.git
 [submodule "pools/livepool"]
-	path = pools/livepool
+	path = transcoding/pools/livepool
 	url = git@github.com:Livepool-io/transcoder.git
