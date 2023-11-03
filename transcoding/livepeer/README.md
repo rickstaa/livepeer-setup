@@ -34,9 +34,9 @@ Once the prerequisites are met, follow these steps to launch your LivePeer orche
 
 6. Confirm the orchestrator is on duty by executing `docker ps`.
 
-Your LivePeer orchestrator is now ready to transcode on port `8935`, with the LivePeer CLI server exposed on port `7935`.
+Your LivePeer orchestrator is now ready to transcode on port `8935`, with the LivePeer CLI server exposed on port `7936`.
 
-> \[WARNING]
+> \[!WARNING]
 > Ensure root access for running Docker containers on your system. If you've previously followed [this guide](https://docs.docker.com/engine/install/linux-postinstall/) for non-root users, revert those steps. Failure to do so may expose your wallet password.
 
 ### Unleash the CLI Server
