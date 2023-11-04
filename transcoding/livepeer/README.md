@@ -1,6 +1,6 @@
 # Streamlined LivePeer Orchestrator Setup
 
-Welcome to the LivePeer Orchestrator Setup! In this folder, find a gem—the [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of your LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
+Welcome to the LivePeer Orchestrator Setup! In this folder, find a [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of your LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
 
 - [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) (or later).
 - [Docker](https://docs.docker.com/engine/install/ubuntu/) (optional but highly recommended).
@@ -10,7 +10,9 @@ Welcome to the LivePeer Orchestrator Setup! In this folder, find a gem—the [li
 
 Once the prerequisites are met, follow these steps to launch your LivePeer orchestrator.
 
-## Steps to Brilliance
+## How to Use
+
+### Start the Orchestrator
 
 1. Kick things off by renaming `config/lporch_template.cfg` to `config/lporch.cfg` and filling in the required fields.
 2. Add a `.eth_password.txt` file to this directory and input your Ethereum wallet password.
@@ -29,7 +31,7 @@ Once the prerequisites are met, follow these steps to launch your LivePeer orche
 5. Launch the LivePeer orchestrator using Docker Compose:
 
    ```bash
-   sudo docker compose up -d
+   sudo docker compose up
    ```
 
 6. Confirm the orchestrator is on duty by executing `docker ps`.
@@ -48,7 +50,7 @@ ports:
   # - 7936:7935 # Make CLI server available on host.
 ```
 
-### Pre-existing ETH Wallet
+### Use Pre-existing ETH Wallet
 
 Prefer a pre-existing ETH wallet? Follow these steps:
 
@@ -74,7 +76,7 @@ Prefer a pre-existing ETH wallet? Follow these steps:
 5. Exit the container and restart the LivePeer orchestrator:
 
    ```bash
-   sudo docker compose up -d
+   sudo docker compose up
    ```
 
 ## Deep Dive Resources
