@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     runtime: nvidia
     ports:
-      - 7936:7935 # Make CLI server available on host.
+      # - 7936:7935 # Make CLI server available on host.
       - 8935:8935
     volumes:
       - ./config/lporch.cfg:/root/lporch.cfg

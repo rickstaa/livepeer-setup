@@ -30,7 +30,7 @@ Ensure your system is ready for the monitoring journey by meeting these prerequi
 2. **Launch the Monitoring Tools with Docker Compose:**
 
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 > [!IMPORTANT]\
