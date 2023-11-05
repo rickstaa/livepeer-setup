@@ -30,7 +30,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/var/lib/grafana/dashboards/psu_overview.json"
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/var/lib/grafana/dashboards/orchestrator_overview.json"
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
