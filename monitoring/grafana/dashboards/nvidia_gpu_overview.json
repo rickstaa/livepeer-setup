@@ -91,7 +91,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg(DCGM_FI_DEV_GPU_TEMP)",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_TEMP)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -100,7 +100,7 @@
           "refId": "A"
         }
       ],
-      "title": "avg Temp.",
+      "title": "Temp.",
       "transparent": true,
       "type": "gauge"
     },
@@ -215,7 +215,7 @@
         "legend": {
           "calcs": [
             "mean",
-            "lastNotNull",
+            "min",
             "max"
           ],
           "displayMode": "table",
@@ -235,7 +235,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_GPU_TEMP",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_TEMP)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -319,7 +319,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_MEM_COPY_UTIL",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_MEM_COPY_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -405,7 +405,7 @@
         "legend": {
           "calcs": [
             "mean",
-            "lastNotNull",
+            "min",
             "max"
           ],
           "displayMode": "table",
@@ -425,7 +425,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_MEM_COPY_UTIL",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_MEM_COPY_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -509,7 +509,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg(DCGM_FI_DEV_GPU_UTIL)",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -518,7 +518,7 @@
           "refId": "A"
         }
       ],
-      "title": "avg GPU Utilization",
+      "title": "GPU Utilization",
       "transparent": true,
       "type": "gauge"
     },
@@ -595,7 +595,7 @@
         "legend": {
           "calcs": [
             "mean",
-            "lastNotNull",
+            "min",
             "max"
           ],
           "displayMode": "table",
@@ -615,7 +615,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_GPU_UTIL",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -699,7 +699,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg(DCGM_FI_DEV_ENC_UTIL)",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_ENC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -708,7 +708,7 @@
           "refId": "A"
         }
       ],
-      "title": "avg Encoder Utilization",
+      "title": "Encoder Utilization",
       "transparent": true,
       "type": "gauge"
     },
@@ -785,7 +785,7 @@
         "legend": {
           "calcs": [
             "mean",
-            "lastNotNull",
+            "min",
             "max"
           ],
           "displayMode": "table",
@@ -805,7 +805,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_ENC_UTIL",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_ENC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -889,7 +889,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg(DCGM_FI_DEV_DEC_UTIL)",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_DEC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -898,7 +898,7 @@
           "refId": "A"
         }
       ],
-      "title": "avg Decoder Utilization",
+      "title": "Decoder Utilization",
       "transparent": true,
       "type": "gauge"
     },
@@ -975,7 +975,7 @@
         "legend": {
           "calcs": [
             "mean",
-            "lastNotNull",
+            "min",
             "max"
           ],
           "displayMode": "table",
@@ -995,7 +995,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "DCGM_FI_DEV_DEC_UTIL",
+          "expr": "sum by (modelName, device) (DCGM_FI_DEV_DEC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1052,6 +1052,6 @@
   "timezone": "",
   "title": "Nvidia GPU",
   "uid": "fnvhnzGmk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

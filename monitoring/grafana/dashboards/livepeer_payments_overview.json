@@ -59,7 +59,7 @@
       "id": 34,
       "libraryPanel": {
         "name": "All (cost)",
-        "uid": "c3d7c2ce-c991-49fd-b4db-aedeadf6dcf8"
+        "uid": "a4c0df72-ff4c-40b6-ac30-cd5cfbbd2e0e"
       },
       "title": "All (cost)"
     },
@@ -73,7 +73,7 @@
       "id": 36,
       "libraryPanel": {
         "name": "Year (cost)",
-        "uid": "f2704cd0-ee64-446b-a812-9ae304cbe11b"
+        "uid": "c20eea7c-db32-4188-8018-aaf8d5a8e324"
       },
       "title": "Year (cost)"
     },
@@ -87,7 +87,7 @@
       "id": 38,
       "libraryPanel": {
         "name": "Month (cost)",
-        "uid": "acd8e672-6d1a-4cfe-a1a2-231e08ae5e77"
+        "uid": "dbb19c65-8d4e-4e78-b89d-c8d8e0208187"
       },
       "title": "Month (cost)"
     },
@@ -101,7 +101,7 @@
       "id": 40,
       "libraryPanel": {
         "name": "Week (cost)",
-        "uid": "a53e3fc0-9134-4c22-abad-16bcbeb22489"
+        "uid": "d4508328-bbd5-4519-a100-2862b4fe9849"
       },
       "title": "Week (cost)"
     },
@@ -115,7 +115,7 @@
       "id": 42,
       "libraryPanel": {
         "name": "Day (cost)",
-        "uid": "c0260016-1973-4ba5-a417-82b6949caf3c"
+        "uid": "bc0f2fcc-b810-40c8-be68-4bbcd1b0bb85"
       },
       "title": "Day (cost)"
     },
@@ -131,6 +131,68 @@
       "panels": [],
       "title": "Payout",
       "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 5
+      },
+      "id": 45,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(livepeer_tickets_recv[10y]))",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Tickets Received",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -160,8 +222,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 0,
+        "w": 4,
+        "x": 4,
         "y": 5
       },
       "id": 30,
@@ -188,7 +250,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(livepeer_ticket_value_recv)-(sum(livepeer_value_redeemed) OR on() vector(0)))/10^9",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -290,7 +352,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(livepeer_ticket_value_recv)-(sum(livepeer_value_redeemed) OR on() vector(0)))/10^9",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -391,7 +453,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(livepeer_tickets_recv)",
+          "expr": "sum(increase(livepeer_tickets_recv[10y]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -406,7 +468,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (instance) (increase(livepeer_tickets_recv[1h]))",
+          "expr": "sum(increase(livepeer_tickets_recv[1h]))",
           "hide": false,
           "instant": false,
           "legendFormat": "Hourly Rate",
@@ -733,9 +795,11 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "livepeer_winning_tickets_recv",
           "format": "time_series",
           "intervalFactor": 1,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1015,6 +1079,6 @@
   "timezone": "",
   "title": "Livepeer Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 7,
+  "version": 12,
   "weekStart": ""
 }

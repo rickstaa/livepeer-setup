@@ -4,7 +4,7 @@ name: livepeer-orchestrator
 
 services:
   livepeer-combined-orchestrator:
-    image: livepeer/go-livepeer:0.7.1
+    image: livepeer/go-livepeer:master
     container_name: "livepeer-combined-orchestrator"
     restart: unless-stopped
     runtime: nvidia

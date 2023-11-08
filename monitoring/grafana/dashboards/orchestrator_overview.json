@@ -142,7 +142,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "(sum(livepeer_ticket_value_recv)-(sum(livepeer_value_redeemed) OR on() vector(0)))/10^9",
+          "editorMode": "code",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -394,7 +395,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (node_type) (avg_over_time(livepeer_current_sessions_total{node_type=\"orch\"}[1h]))",
+          "expr": "sum(avg_over_time(livepeer_current_sessions_total{node_type=\"orch\"}[1h]))",
           "hide": false,
           "instant": false,
           "legendFormat": "Hourly Avg",
@@ -1224,8 +1225,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1320,8 +1320,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1409,7 +1408,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -1429,6 +1428,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 2,
+  "version": 4,
   "weekStart": ""
 }
