@@ -125,12 +125,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -166,7 +162,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[1d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[1d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -192,12 +188,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -233,11 +225,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[7d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[7d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
+          "hide": false,
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "B"
         }
       ],
       "title": "Week",
@@ -259,12 +252,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -300,7 +289,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[30d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[30d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -326,12 +315,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -367,7 +352,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[1y]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[1y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -393,12 +378,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -434,7 +415,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[10y]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[10y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -460,12 +441,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -502,7 +479,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[1d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[1d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -528,12 +505,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -570,7 +543,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[1d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[7d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -596,12 +569,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -638,7 +607,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[30d]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[30d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -664,12 +633,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -706,7 +671,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[1y]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[1y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -732,12 +697,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "text",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -774,7 +735,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(liquidctl_estimated_input_power[10y]) / count_over_time(liquidctl_estimated_input_power[1h]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[10y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -884,7 +845,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "liquidctl_estimated_input_power",
+          "expr": "sum(liquidctl_estimated_input_power)",
           "interval": "",
           "legendFormat": "signal",
           "range": true,
@@ -896,7 +857,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg_over_time(liquidctl_estimated_input_power[1d])",
+          "expr": "avg_over_time(sum(liquidctl_estimated_input_power)[1d:])",
           "hide": false,
           "instant": false,
           "legendFormat": "MA (1d)",
@@ -994,7 +955,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "liquidctl_total_power_output",
+          "expr": "sum(liquidctl_total_power_output)",
           "interval": "",
           "legendFormat": "signal",
           "range": true,
@@ -1006,7 +967,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "avg_over_time(liquidctl_total_power_output[1d])",
+          "expr": "avg_over_time(sum(liquidctl_total_power_output)[1d:])",
           "hide": false,
           "instant": false,
           "legendFormat": "MA (1d)",
@@ -1075,7 +1036,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "liquidctl_vrm_temperature",
+          "expr": "sum(liquidctl_vrm_temperature)",
           "interval": "",
           "legendFormat": "",
           "range": true,
@@ -1143,7 +1104,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "liquidctl_case_temperature{}",
+          "expr": "sum(liquidctl_case_temperature)",
           "interval": "",
           "legendFormat": "",
           "range": true,
@@ -1216,7 +1177,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "liquidctl_estimated_efficiency{}",
+          "expr": "sum(liquidctl_estimated_efficiency)",
           "interval": "",
           "legendFormat": "",
           "range": true,
@@ -1281,7 +1242,6 @@
         "y": 16
       },
       "id": 11,
-      "interval": "1h",
       "options": {
         "barRadius": 0,
         "barWidth": 0.97,
@@ -1311,7 +1271,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "avg_over_time(liquidctl_estimated_input_power[60m])*0.001",
+          "expr": "avg_over_time(sum(liquidctl_estimated_input_power)[60m:])*0.001",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -1412,7 +1372,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "rate(liquidctl_estimated_input_power[60m])",
+          "expr": "rate(sum(liquidctl_estimated_input_power)[60m:])",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -1427,7 +1387,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 38,
   "tags": [
     "hardware",
@@ -1440,7 +1400,7 @@
         "hide": 2,
         "label": "Energy Price",
         "name": "energy_price",
-        "query": "0.4",
+        "query": " 0.37690",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -1454,6 +1414,6 @@
   "timezone": "",
   "title": "PSU Overview",
   "uid": "WF0WESPnz",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }

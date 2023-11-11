@@ -1,9 +1,9 @@
 apiVersion: 1
 
 providers:
-  - name: 'LivePeer dashboards'
+  - name: "LivePeer dashboards"
     orgId: 1
-    folder: 'livepeer'
+    folder: "livepeer"
     type: file
     disableDeletion: true
     updateIntervalSeconds: 10

@@ -35,6 +35,8 @@ Ensure your system is ready for the monitoring journey by meeting these prerequi
 
 3. **Re-create the library panels:** Unfortunately, Grafana does [not yet support provisioning of library panels](https://github.com/grafana/grafana/issues/46247). This means that you have to manually re-create and re-link the library panels found in the `livepeer_payements_overview.json` and `psu_overview.json` dashboards. This is a one-time task.
 
+4. **Setup alerting**: The dashboards are equipped with various alerts. To ensure you receive these alerts on your preferred channel, it's essential to configure your [Grafana notification policies and contact points](https://grafana.com/docs/grafana/latest/alerting/).
+
 > [!IMPORTANT]\
 > If you're using the [ufw](https://help.ubuntu.com/community/UFW) firewall, set it to welcome incoming connections from the `livepeer` Docker subnet to localhost on the specific exporter ports. For instance, use this command:
 >
