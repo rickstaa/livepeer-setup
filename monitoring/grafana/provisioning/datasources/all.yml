@@ -8,3 +8,8 @@ datasources:
     isDefault: true
   - name: Infinity
     type: yesoreyeram-infinity-datasource
+  - name: LivePeer Explorer
+    type: marcusolsson-json-datasource
+    url: https://leaderboard-serverless.vercel.app/api/raw_stats
+    jsonData:
+      queryParams: "orchestrator=0x5BdEedCA9c6346B0CE6b17ffa8227A4DACE37039"

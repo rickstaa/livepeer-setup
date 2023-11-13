@@ -32,7 +32,7 @@ services:
       - 3000:3000
     environment:
       GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/var/lib/grafana/dashboards/orchestrator_overview.json"
-      GF_INSTALL_PLUGINS: "yesoreyeram-infinity-datasource"
+      GF_INSTALL_PLUGINS: "yesoreyeram-infinity-datasource, marcusolsson-json-datasource"
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -71,6 +71,19 @@ services:
       - "9530:9530"
     privileged: true
     restart: unless-stopped
+
+  livepeer-exporer:
+    image: rickstaa/livepeer-exporter:latest
+    container_name: livepeer-exporter
+    ports:
+      - "9153:9153"
+    restart: unless-stopped
+    environment:
+      - ORCHESTRATOR_ADDRESS=<YOUR_ORCHESTRATOR_ADDRESS>
+      - ORCHESTRATOR_ADDRESS_SECONDARY=<YOUR_SECONDARY_ORCHESTRATOR_ADDRESS>
+      - FETCH_INTERVAL=5m
+      - FETCH_TEST_STREAMS_INTERVAL=15m
+      - UPDATE_INTERVAL=30s
 
 volumes:
   prometheus_data:

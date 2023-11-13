@@ -1,6 +1,6 @@
 # LivePeer Transcoding and Monitoring Hub
 
-Welcome to the core of my LivePeer setup! This repository is a collection of Docker files, scripts, configurations, and resources that power my [LivePeer](https://livepeer.org/) transcoder. Additionally, it hosts a robust monitoring system to keep a close eye on both the transcoder and overall system performance.
+Welcome to the core of my LivePeer setup! This repository collects Docker files, scripts, configurations, and resources that power my [LivePeer](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
 
 ## System Snapshot
 
@@ -12,7 +12,7 @@ Welcome to the core of my LivePeer setup! This repository is a collection of Doc
 
 ## System Benchmarking
 
-Assess your system's performance using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. Find comprehensive instructions in the [official documentation](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding) for effective tool utilization.
+Assess your system's performance using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. For effective tool utilisation, find comprehensive instructions in the [official documentation](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
 
 ## Transcoding Setup
 

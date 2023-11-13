@@ -9,14 +9,14 @@ services:
     restart: unless-stopped
     runtime: nvidia
     ports:
-      # - 7936:7935 # Make CLI server available on host.
+      - 7936:7935 # Make CLI server available on host.
       - 8935:8935
     volumes:
       - ./config/lporch.cfg:/root/lporch.cfg
       - lpdata:/root/.lpData
       - "/etc/timezone:/etc/timezone:ro" # Set timezone to host timezone.
       - "/etc/localtime:/etc/localtime:ro" # Set time to host time.
-    command: ["-config", "/root/lporch.cfg", "-ethPassword", "/run/secrets/eth_password"]
+    command: ["-config", "/root/lporch.cfg", "-ethPassword", "/run/secrets/eth_password", "-v", "6"]
     secrets:
       - eth_password
 

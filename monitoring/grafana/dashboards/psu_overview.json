@@ -415,7 +415,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[10y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[5y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -735,7 +735,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[10y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
+          "expr": "sum_over_time(sum(liquidctl_estimated_input_power)[5y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000 * $energy_price",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1119,7 +1119,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "",
+      "description": "PSU power conversion efficiency.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1192,6 +1192,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "Average KWH.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1242,6 +1243,7 @@
         "y": 16
       },
       "id": 11,
+      "interval": "1h",
       "options": {
         "barRadius": 0,
         "barWidth": 0.97,
@@ -1281,7 +1283,7 @@
           "useBackend": false
         }
       ],
-      "title": "Hourly Power by Device",
+      "title": "KWH",
       "transformations": [],
       "type": "barchart"
     },
@@ -1290,6 +1292,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "The per second average rate of increase.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1387,7 +1390,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "schemaVersion": 38,
   "tags": [
     "hardware",
@@ -1414,6 +1417,6 @@
   "timezone": "",
   "title": "PSU Overview",
   "uid": "WF0WESPnz",
-  "version": 1,
+  "version": 4,
   "weekStart": ""
 }

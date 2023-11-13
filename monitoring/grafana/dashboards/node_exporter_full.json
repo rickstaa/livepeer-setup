@@ -23656,7 +23656,7 @@
       "type": "row"
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "revision": 1,
   "schemaVersion": 38,
   "tags": [
@@ -23798,6 +23798,6 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 4,
+  "version": 2,
   "weekStart": ""
 }

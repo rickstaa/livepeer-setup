@@ -24,4 +24,4 @@ Follow a straightforward guide on configuring a LivePeer orchestrator with the m
 
 ### Docker Setup
 
-Explore the simplicity of running your LivePeer orchestrator with the included [livepeer docker-compose file](livepeer/docker-compose.yml). Dive into detailed instructions by checking out the [livepeer/README](livepeer/README.md). Transcoding has never been this easy!
+Explore the simplicity of running your LivePeer orchestrator with the included [livepeer docker-compose file](livepeer/docker-compose.yml). Dive into detailed instructions by checking out the [livepeer/README](livepeer/README.md).

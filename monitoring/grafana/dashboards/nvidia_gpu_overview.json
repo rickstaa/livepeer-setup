@@ -655,7 +655,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -759,7 +760,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1005,7 +1007,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "schemaVersion": 38,
   "tags": [
     "gpu",
@@ -1048,6 +1050,6 @@
   "timezone": "",
   "title": "Nvidia GPU",
   "uid": "fnvhnzGmk",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }
