@@ -21,10 +21,10 @@ Ensure your system is ready for the monitoring journey by meeting these prerequi
 
 ### How to Use
 
-1. **Clone this Repository:**
+1. **Clone this Repository with its submodules:**
 
    ```bash
-   git clone git@github.com:rickstaa/livepeer-setup.git
+   git clone --recurse-submodules git@github.com:rickstaa/livepeer-setup.git
    ```
 
 2. **Launch the Monitoring Tools with Docker Compose:**

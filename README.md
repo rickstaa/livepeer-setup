@@ -2,6 +2,14 @@
 
 Welcome to the core of my LivePeer setup! This repository collects Docker files, scripts, configurations, and resources that power my [LivePeer](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
 
+## Clone Instructions
+
+This repository contains several submodules. To clone this repository and its submodules, execute the following command:
+
+```bash
+git clone --recurse-submodules git@github.com:rickstaa/livepeer-setup.git
+```
+
 ## System Snapshot
 
 ### Key Components

@@ -1,6 +1,6 @@
 # Pool Directory
 
-This directory is home to pool repositories as submodules. To clone these repositories, execute the following command:
+This directory is home to pool repositories as submodules. To pull these submodules, execute the following command:
 
 ```bash
 git submodule update --init --recursive
