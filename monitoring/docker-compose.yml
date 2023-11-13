@@ -72,7 +72,7 @@ services:
     privileged: true
     restart: unless-stopped
 
-  livepeer-exporer:
+  livepeer-exporter:
     image: rickstaa/livepeer-exporter:latest
     container_name: livepeer-exporter
     ports:
