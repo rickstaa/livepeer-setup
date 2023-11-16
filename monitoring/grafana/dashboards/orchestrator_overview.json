@@ -37,10 +37,10 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Whether the orchestrator is active",
+      "description": "Whether the orchestrator is currently active",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -49,12 +49,12 @@
           "mappings": [
             {
               "options": {
-                "false": {
+                "0": {
                   "color": "red",
                   "index": 0,
                   "text": "Inactive"
                 },
-                "true": {
+                "1": {
                   "color": "green",
                   "index": 1,
                   "text": "Active"
@@ -85,14 +85,14 @@
       "id": 48,
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^ID$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -100,33 +100,17 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "active",
-              "text": "ID",
-              "type": "boolean"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder",
-          "source": "url",
-          "summarizeExpression": "",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_active",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Active",
@@ -135,8 +119,8 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Number of delegators that are currently staked with the orchestrator",
       "fieldConfig": {
@@ -171,7 +155,7 @@
       "id": 46,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -186,33 +170,17 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "id",
-              "text": "id",
-              "type": "string"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder.delegators",
-          "source": "url",
-          "summarizeExpression": "count(id)",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_delegator_count",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "# Delegators",
@@ -224,7 +192,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "The price per unit in wei",
+      "description": "The price per unit in the orchestrator charges",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -278,6 +246,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "sum(livepeer_transcoding_price)",
           "instant": false,
           "legendFormat": "__auto",
@@ -290,10 +259,10 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Total Claimed ETH fees",
+      "description": "Total receved fees",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -314,7 +283,7 @@
               }
             ]
           },
-          "unit": "none"
+          "unit": "ETH"
         },
         "overrides": []
       },
@@ -332,7 +301,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "sum"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -342,56 +311,29 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "totalVolumeETH",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/history.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_total_volume_eth",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Total Claimed Fees",
-      "transformations": [
-        {
-          "id": "convertFieldType",
-          "options": {
-            "conversions": [
-              {
-                "destinationType": "number",
-                "targetField": "totalVolumeETH*1947.2338033447322"
-              }
-            ],
-            "fields": {}
-          }
-        }
-      ],
+      "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Total value of the claimed fees",
+      "description": "Total value of the received fees",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -430,9 +372,9 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "sum"
+            "lastNotNull"
           ],
-          "fields": "/^Total Value$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -440,37 +382,42 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "totalVolumeETH",
-              "text": "total_claimed_fee",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [
-            {
-              "selector": "total_claimed_fee*$eth_price",
-              "text": "Total Value",
-              "type": "string"
-            }
-          ],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/history.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum(livepeer_orch_total_volume_eth)",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "ETH_price{currency=\"EUR\"}",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "$A*$B",
+          "hide": false,
+          "refId": "C",
+          "type": "math"
         }
       ],
       "title": "Total Fee Value",
@@ -479,8 +426,8 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Orchestrator fee cut",
       "fieldConfig": {
@@ -517,7 +464,7 @@
       "id": 45,
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -533,14 +480,16 @@
       "targets": [
         {
           "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "expression": "1.0-($fee_share/1e6)",
-          "hide": false,
-          "refId": "B",
-          "type": "math"
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_fee_cut",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Fee Cut",
@@ -548,10 +497,133 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Total orchestrator score",
+      "description": "Orchestrator stream success rate",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 50
+              },
+              {
+                "color": "yellow",
+                "value": 75
+              },
+              {
+                "color": "green",
+                "value": 100
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 60,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "namePlacement": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_success_rate",
+          "instant": false,
+          "legendFormat": "{{region}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Success Rate",
+      "transformations": [
+        {
+          "id": "joinByLabels",
+          "options": {
+            "value": "region"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "__name__": true,
+              "instance": true,
+              "job": true,
+              "lax": true,
+              "lon": false,
+              "mdw": true,
+              "nyc": true,
+              "sao": true,
+              "sin": true
+            },
+            "indexByName": {
+              "fra": 0,
+              "global": 3,
+              "instance": 9,
+              "lax": 4,
+              "lon": 1,
+              "mdw": 5,
+              "nyc": 6,
+              "prg": 2,
+              "sao": 7,
+              "sin": 8
+            },
+            "renameByName": {
+              "__name__": "",
+              "fra": "FRA",
+              "global": "global",
+              "lon": "LON",
+              "prg": "PRG"
+            }
+          }
+        }
+      ],
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Orchestrator round trip score",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -579,175 +651,10 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 12,
-        "y": 1
-      },
-      "id": 52,
-      "options": {
-        "displayMode": "basic",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
-        "namePlacement": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true,
-        "valueMode": "color"
-      },
-      "pluginVersion": "10.2.0",
-      "targets": [
-        {
-          "columns": [
-            {
-              "selector": "lon",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "fra",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "prg",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "global",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [
-            {
-              "selector": "lon/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "fra/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "prg/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "global/10",
-              "text": "",
-              "type": "string"
-            }
-          ],
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
-          },
-          "filters": [],
-          "format": "dataframe",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.scores",
-          "source": "url",
-          "type": "json",
-          "uql": "parse-json\n| project \"scores\"\n\n",
-          "url": "https://explorer.livepeer.org/api/score/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        }
-      ],
-      "title": "Score",
-      "transformations": [
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "FRA 1": true,
-              "GLOBAL 1": true,
-              "LON 1": true,
-              "PRG 1": true,
-              "fra": true,
-              "global": true,
-              "global 1": true,
-              "global 2": false,
-              "lax": true,
-              "lon": true,
-              "mdw": true,
-              "nyc": true,
-              "prg": true,
-              "sao": true,
-              "sin": true
-            },
-            "indexByName": {
-              "fra": 1,
-              "global": 3,
-              "lax": 4,
-              "lon": 0,
-              "mdw": 5,
-              "nyc": 6,
-              "prg": 2,
-              "sao": 7,
-              "sin": 8
-            },
-            "renameByName": {
-              "fra/10": "FRA",
-              "global/10": "global",
-              "lon/10": "LON",
-              "prg/10": "PRG"
-            }
-          }
-        }
-      ],
-      "type": "bargauge"
-    },
-    {
-      "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
-      },
-      "description": "Orchestrator transcode success rate",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "continuous-RdYlGr"
-          },
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 4,
         "x": 16,
         "y": 1
       },
-      "id": 51,
+      "id": 53,
       "options": {
         "displayMode": "basic",
         "minVizHeight": 10,
@@ -767,35 +674,35 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.successRates",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/api/score/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_round_trip_score",
+          "format": "time_series",
+          "instant": false,
+          "legendFormat": "{{region}}",
+          "range": true,
+          "refId": "A"
         }
       ],
-      "title": "Success Rate",
+      "title": "Round Trip Score",
       "transformations": [
+        {
+          "id": "joinByLabels",
+          "options": {
+            "value": "region"
+          }
+        },
         {
           "id": "organize",
           "options": {
             "excludeByName": {
-              "fra": false,
+              "__name__": true,
+              "instance": true,
+              "job": true,
               "lax": true,
               "mdw": true,
               "nyc": true,
@@ -803,15 +710,18 @@
               "sin": true
             },
             "indexByName": {
-              "fra": 1,
+              "__name__": 4,
+              "fra": 0,
               "global": 3,
-              "lax": 4,
-              "lon": 0,
-              "mdw": 5,
-              "nyc": 6,
+              "instance": 5,
+              "job": 6,
+              "lax": 7,
+              "lon": 1,
+              "mdw": 8,
+              "nyc": 9,
               "prg": 2,
-              "sao": 7,
-              "sin": 8
+              "sao": 10,
+              "sin": 11
             },
             "renameByName": {
               "fra": "FRA",
@@ -826,10 +736,10 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Orchestrator round trip score",
+      "description": "Total orchestrator score",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -860,7 +770,7 @@
         "x": 20,
         "y": 1
       },
-      "id": 53,
+      "id": 52,
       "options": {
         "displayMode": "basic",
         "minVizHeight": 10,
@@ -880,99 +790,47 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "lon",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "fra",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "prg",
-              "text": "",
-              "type": "number"
-            },
-            {
-              "selector": "global",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [
-            {
-              "selector": "lon/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "fra/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "prg/10",
-              "text": "",
-              "type": "string"
-            },
-            {
-              "selector": "global/10",
-              "text": "",
-              "type": "string"
-            }
-          ],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "dataframe",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.roundTripScores",
-          "source": "url",
-          "type": "json",
-          "uql": "parse-json\n| project \"scores\"\n\n",
-          "url": "https://explorer.livepeer.org/api/score/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_total_score",
+          "instant": false,
+          "legendFormat": "{{region}}",
+          "range": true,
+          "refId": "A"
         }
       ],
-      "title": "Round Trip Score",
+      "title": "Score",
       "transformations": [
+        {
+          "id": "joinByLabels",
+          "options": {
+            "value": "region"
+          }
+        },
         {
           "id": "organize",
           "options": {
             "excludeByName": {
-              "FRA 1": true,
-              "GLOBAL 1": true,
-              "LON 1": true,
-              "PRG": false,
-              "PRG 1": true,
-              "fra": true,
-              "global": true,
-              "global 1": true,
-              "global 2": false,
+              "__name__": true,
+              "instance": true,
+              "job": true,
               "lax": true,
-              "lon": true,
+              "lon": false,
               "mdw": true,
               "nyc": true,
-              "prg": true,
               "sao": true,
               "sin": true
             },
             "indexByName": {
-              "fra": 1,
+              "fra": 0,
               "global": 3,
+              "instance": 9,
               "lax": 4,
-              "lon": 0,
+              "lon": 1,
               "mdw": 5,
               "nyc": 6,
               "prg": 2,
@@ -980,14 +838,11 @@
               "sin": 8
             },
             "renameByName": {
-              "fra": "",
-              "fra/10": "FRA",
-              "global": "",
-              "global/10": "global",
-              "lon": "",
-              "lon/10": "LON",
-              "prg": "",
-              "prg/10": "PRG"
+              "__name__": "",
+              "fra": "FRA",
+              "global": "global",
+              "lon": "LON",
+              "prg": "PRG"
             }
           }
         }
@@ -996,8 +851,8 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Number of rounds the orchestrator has been active",
       "fieldConfig": {
@@ -1033,14 +888,14 @@
       "id": 49,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^Rounds Active$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -1048,71 +903,17 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "id",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": true,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "",
-          "source": "url",
-          "summarizeExpression": "",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/api/current-round",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        },
-        {
-          "columns": [
-            {
-              "selector": "startRound",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
-          },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": true,
-          "parser": "backend",
-          "refId": "B",
-          "root_selector": "$.pageProps.account.delegator",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        },
-        {
-          "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
-          },
-          "expression": "$A-$B",
-          "hide": false,
-          "refId": "Rounds Active",
-          "type": "math"
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_current_round - livepeer_orch_activation_round",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "# Rounds Active",
@@ -1121,10 +922,10 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "How many rounds the orchestrator has called the rewards",
+      "description": "Orchestrator reward call ratio over the latest 30 rounds",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1135,12 +936,20 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "orange",
+                "value": 0.5
+              },
+              {
+                "color": "#EAB839",
+                "value": 0.8
+              },
+              {
+                "color": "green",
+                "value": 1
               }
             ]
           },
@@ -1157,14 +966,14 @@
       "id": 59,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^Ratio$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -1172,115 +981,34 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "id",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "",
-          "source": "url",
-          "summarizeExpression": "",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/api/current-round",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        },
-        {
-          "columns": [
-            {
-              "selector": "startRound",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
-          },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "B",
-          "root_selector": "$.pageProps.account.delegator",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        },
-        {
-          "columns": [
-            {
-              "selector": "rewardTokens",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
-          },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "C",
-          "root_selector": "$.pageProps.account.transcoder.pools",
-          "source": "url",
-          "summarizeExpression": "count(rewardTokens)",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/history.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
-        },
-        {
-          "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
-          },
-          "expression": "($A-$B)/$C",
-          "hide": false,
-          "refId": "Ratio",
-          "type": "math"
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_thirty_day_reward_claim_ratio",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
-      "title": "Reward Call Ratio",
+      "title": "Call Ratio",
       "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Total LPT staked to the orchestrator",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "fixedColor": "green",
+            "mode": "fixed"
           },
           "mappings": [],
           "thresholds": {
@@ -1289,10 +1017,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1309,7 +1033,7 @@
       "id": 47,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -1324,31 +1048,17 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "totalStake",
-              "text": "",
-              "type": "number"
-            }
-          ],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "hide": false,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_total_stake",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Total Staked",
@@ -1356,10 +1066,10 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
-      "description": "Total Claimed LPT rewards",
+      "description": "Total claimed LPT rewards",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1393,7 +1103,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "sum"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -1403,32 +1113,17 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "rewardTokens",
-              "text": "reward",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder.pools",
-          "source": "url",
-          "summarizeExpression": "sum(reward)",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/history.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_total_claimed_rewards",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Total Reward",
@@ -1437,8 +1132,8 @@
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Total value of claimed LPT rewards",
       "fieldConfig": {
@@ -1474,9 +1169,9 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "sum"
+            "lastNotNull"
           ],
-          "fields": "/^Total$/",
+          "fields": "",
           "values": false
         },
         "textMode": "auto"
@@ -1484,32 +1179,32 @@
       "pluginVersion": "10.2.0",
       "targets": [
         {
-          "columns": [
-            {
-              "selector": "rewardTokens",
-              "text": "",
-              "type": "number"
-            }
-          ],
-          "computed_columns": [],
           "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "PD0067CAD9A63E081"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "filters": [],
-          "format": "table",
-          "global_query_id": "",
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "LPT_price{currency=\"EUR\"}",
           "hide": true,
-          "parser": "backend",
-          "refId": "A",
-          "root_selector": "$.pageProps.account.transcoder.pools",
-          "source": "url",
-          "type": "json",
-          "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/history.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-          "url_options": {
-            "data": "",
-            "method": "GET"
-          }
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum(livepeer_orch_total_claimed_rewards)",
+          "hide": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "B"
         },
         {
           "datasource": {
@@ -1517,32 +1212,20 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
-          "expression": "$A*$lpt_price",
+          "expression": "$A*$B",
           "hide": false,
-          "refId": "Value",
+          "refId": "C",
           "type": "math"
         }
       ],
       "title": "Total Reward Value",
-      "transformations": [
-        {
-          "id": "reduce",
-          "options": {
-            "includeTimeField": false,
-            "labelsToFields": false,
-            "mode": "seriesToRows",
-            "reducers": [
-              "sum"
-            ]
-          }
-        }
-      ],
+      "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "yesoreyeram-infinity-datasource",
-        "uid": "PD0067CAD9A63E081"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "description": "Orchestrator reward cut",
       "fieldConfig": {
@@ -1577,7 +1260,7 @@
       "id": 44,
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -1593,18 +1276,474 @@
       "targets": [
         {
           "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "expression": "($reward_cut/1e6)",
-          "hide": false,
-          "refId": "B",
-          "type": "math"
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_reward_cut",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
         }
       ],
       "title": "Reward Cut",
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Delegators that are currently staking with the orchestrator.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Stake (LPT)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "LPT"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 7
+      },
+      "id": 61,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Since Round"
+          }
+        ]
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_delegator_bonded_amount",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "bonded amound",
+          "range": true,
+          "refId": "Bonded Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_delegator_start_round",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "start round",
+          "range": true,
+          "refId": "Start Round"
+        }
+      ],
+      "title": "👑 Delegators",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "labelsToFields": true,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        },
+        {
+          "id": "joinByLabels",
+          "options": {
+            "join": [
+              "id"
+            ],
+            "value": "__name__"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "id": "Address",
+              "livepeer_orch_delegator_bonded_amount": "Stake",
+              "livepeer_orch_delegator_start_round": "Since Round"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "The rewards claimed by the orchestrator.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reward"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "LPT"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Local Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dateTimeAsLocal"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 7
+      },
+      "id": 64,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Local Time"
+          }
+        ]
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_reward_amount",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "bonded amound",
+          "range": true,
+          "refId": "Bonded Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_reward_block_time",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "start round",
+          "range": true,
+          "refId": "Start Round"
+        }
+      ],
+      "title": "💎 Claimed Rewards",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "labelsToFields": true,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        },
+        {
+          "id": "joinByLabels",
+          "options": {
+            "join": [
+              "id"
+            ],
+            "value": "__name__"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "id": "Hash",
+              "livepeer_orch_delegator_bonded_amount": "Stake",
+              "livepeer_orch_delegator_start_round": "Since Round",
+              "livepeer_orch_reward_amount": "Reward",
+              "livepeer_orch_reward_block_time": "Local Time"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "The winning tickets received by the orchestrator.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Reward"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ETH"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Local Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dateTimeAsLocal"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 7
+      },
+      "id": 65,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Local Time"
+          }
+        ]
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_winning_ticket_amount",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "bonded amound",
+          "range": true,
+          "refId": "Bonded Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_winning_ticket_block_time",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "start round",
+          "range": true,
+          "refId": "Start Round"
+        }
+      ],
+      "title": "🎟️ Winning Tickets",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "labelsToFields": true,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        },
+        {
+          "id": "joinByLabels",
+          "options": {
+            "join": [
+              "id"
+            ],
+            "value": "__name__"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "id": "Hash",
+              "livepeer_orch_delegator_bonded_amount": "Stake",
+              "livepeer_orch_delegator_start_round": "Since Round",
+              "livepeer_orch_reward_amount": "Reward",
+              "livepeer_orch_reward_block_time": "Local Time"
+            }
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "collapsed": false,
@@ -1612,7 +1751,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 15
       },
       "id": 30,
       "panels": [],
@@ -1649,7 +1788,7 @@
         "h": 8,
         "w": 4,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 28,
       "options": {
@@ -1720,7 +1859,7 @@
         "h": 8,
         "w": 4,
         "x": 4,
-        "y": 8
+        "y": 16
       },
       "id": 29,
       "options": {
@@ -1797,7 +1936,7 @@
         "h": 4,
         "w": 3,
         "x": 8,
-        "y": 8
+        "y": 16
       },
       "id": 2,
       "links": [],
@@ -1866,7 +2005,7 @@
         "h": 8,
         "w": 4,
         "x": 11,
-        "y": 8
+        "y": 16
       },
       "id": 8,
       "options": {
@@ -1967,15 +2106,17 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 8
+        "y": 16
       },
       "id": 4,
       "links": [],
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "mean"
+          ],
           "displayMode": "list",
-          "placement": "right",
+          "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
@@ -2054,7 +2195,7 @@
         "h": 4,
         "w": 3,
         "x": 8,
-        "y": 12
+        "y": 20
       },
       "id": 6,
       "links": [],
@@ -2178,7 +2319,7 @@
         "h": 9,
         "w": 15,
         "x": 0,
-        "y": 16
+        "y": 24
       },
       "id": 22,
       "options": {
@@ -2276,7 +2417,7 @@
         "h": 9,
         "w": 9,
         "x": 15,
-        "y": 16
+        "y": 24
       },
       "id": 24,
       "options": {
@@ -2402,7 +2543,7 @@
         "h": 8,
         "w": 15,
         "x": 0,
-        "y": 25
+        "y": 33
       },
       "id": 12,
       "options": {
@@ -2501,7 +2642,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 25
+        "y": 33
       },
       "id": 10,
       "options": {
@@ -2611,7 +2752,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2627,7 +2769,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 41
       },
       "id": 18,
       "options": {
@@ -2708,7 +2850,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2724,7 +2867,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 41
       },
       "id": 16,
       "options": {
@@ -2834,7 +2977,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2850,7 +2994,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 49
       },
       "id": 20,
       "options": {
@@ -2929,7 +3073,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2945,7 +3090,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 49
       },
       "id": 14,
       "options": {
@@ -3014,16 +3159,16 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 57
       },
       "id": 38,
       "panels": [
         {
           "datasource": {
-            "type": "marcusolsson-json-datasource",
-            "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "description": "Orchestrator transcode success rate",
+          "description": "Orchestrator test stream transcode success rate",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3055,7 +3200,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "orange",
@@ -3079,13 +3225,13 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 58
           },
           "id": 37,
           "options": {
             "barRadius": 0,
             "barWidth": 0.97,
-            "colorByField": "success_rate",
+            "colorByField": "Last *",
             "fullHighlight": false,
             "groupWidth": 0.7,
             "legend": {
@@ -3101,52 +3247,73 @@
               "mode": "single",
               "sort": "none"
             },
-            "xField": "region",
+            "xField": "Field",
             "xTickLabelRotation": 0,
             "xTickLabelSpacing": 0
           },
           "pluginVersion": "10.2.0",
           "targets": [
             {
-              "cacheDurationSeconds": 300,
               "datasource": {
-                "type": "marcusolsson-json-datasource",
-                "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
               },
-              "fields": [
-                {
-                  "jsonPath": "$.*.*.success_rate"
-                },
-                {
-                  "jsonPath": "$.*.*.region",
-                  "language": "jsonpath",
-                  "name": ""
-                }
-              ],
-              "method": "GET",
-              "queryParams": "",
-              "refId": "A",
-              "urlPath": ""
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "livepeer_orch_test_stream_success_rate",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
             }
           ],
           "title": "Success Rate",
           "transformations": [
             {
-              "id": "filterByValue",
+              "id": "joinByLabels",
               "options": {
-                "filters": [
-                  {
-                    "config": {
-                      "id": "regex",
-                      "options": {
-                        "value": "FRA|LON|PRG"
-                      }
-                    },
-                    "fieldName": "region"
-                  }
-                ],
-                "match": "any",
-                "type": "include"
+                "value": "region"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "LAX": true,
+                  "MDW": true,
+                  "NYC": true,
+                  "SAO": true,
+                  "SIN": true,
+                  "__name__": true,
+                  "instance": true,
+                  "job": true,
+                  "orchestrator": true
+                },
+                "indexByName": {
+                  "FRA": 0,
+                  "LAX": 7,
+                  "LON": 1,
+                  "MDW": 8,
+                  "NYC": 9,
+                  "PRG": 2,
+                  "SAO": 10,
+                  "SIN": 11,
+                  "__name__": 3,
+                  "instance": 4,
+                  "job": 5,
+                  "orchestrator": 6
+                },
+                "renameByName": {}
+              }
+            },
+            {
+              "id": "reduce",
+              "options": {
+                "includeTimeField": false,
+                "mode": "seriesToRows",
+                "reducers": [
+                  "lastNotNull"
+                ]
               }
             }
           ],
@@ -3154,10 +3321,10 @@
         },
         {
           "datasource": {
-            "type": "marcusolsson-json-datasource",
-            "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "description": "Orchestrator round trip",
+          "description": "Orchestrator test stream round trip time",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3189,7 +3356,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "yellow",
@@ -3213,13 +3381,13 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 50
+            "y": 58
           },
           "id": 39,
           "options": {
             "barRadius": 0,
             "barWidth": 0.97,
-            "colorByField": "round_trip_time",
+            "colorByField": "Last *",
             "fullHighlight": false,
             "groupWidth": 0.7,
             "legend": {
@@ -3235,52 +3403,73 @@
               "mode": "single",
               "sort": "none"
             },
-            "xField": "region",
+            "xField": "Field",
             "xTickLabelRotation": 0,
             "xTickLabelSpacing": 0
           },
           "pluginVersion": "10.2.0",
           "targets": [
             {
-              "cacheDurationSeconds": 300,
               "datasource": {
-                "type": "marcusolsson-json-datasource",
-                "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
               },
-              "fields": [
-                {
-                  "jsonPath": "$.*.*.round_trip_time"
-                },
-                {
-                  "jsonPath": "$.*.*.region",
-                  "language": "jsonpath",
-                  "name": ""
-                }
-              ],
-              "method": "GET",
-              "queryParams": "",
-              "refId": "A",
-              "urlPath": ""
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "livepeer_orch_test_stream_round_trip_time",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
             }
           ],
           "title": "Round Trip Time",
           "transformations": [
             {
-              "id": "filterByValue",
+              "id": "joinByLabels",
               "options": {
-                "filters": [
-                  {
-                    "config": {
-                      "id": "regex",
-                      "options": {
-                        "value": "FRA|LON|PRG"
-                      }
-                    },
-                    "fieldName": "region"
-                  }
-                ],
-                "match": "any",
-                "type": "include"
+                "value": "region"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "LAX": true,
+                  "MDW": true,
+                  "NYC": true,
+                  "SAO": true,
+                  "SIN": true,
+                  "__name__": true,
+                  "instance": true,
+                  "job": true,
+                  "orchestrator": true
+                },
+                "indexByName": {
+                  "FRA": 0,
+                  "LAX": 7,
+                  "LON": 1,
+                  "MDW": 8,
+                  "NYC": 9,
+                  "PRG": 2,
+                  "SAO": 10,
+                  "SIN": 11,
+                  "__name__": 3,
+                  "instance": 4,
+                  "job": 5,
+                  "orchestrator": 6
+                },
+                "renameByName": {}
+              }
+            },
+            {
+              "id": "reduce",
+              "options": {
+                "includeTimeField": false,
+                "mode": "seriesToRows",
+                "reducers": [
+                  "lastNotNull"
+                ]
               }
             }
           ],
@@ -3288,10 +3477,10 @@
         },
         {
           "datasource": {
-            "type": "marcusolsson-json-datasource",
-            "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "description": "Orchestrator segment download time",
+          "description": "Orchestrator test stream segment download time",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3323,7 +3512,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "orange",
@@ -3343,13 +3533,13 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 58
+            "y": 66
           },
           "id": 40,
           "options": {
             "barRadius": 0,
             "barWidth": 0.97,
-            "colorByField": "download_time",
+            "colorByField": "Last *",
             "fullHighlight": false,
             "groupWidth": 0.7,
             "legend": {
@@ -3365,52 +3555,71 @@
               "mode": "single",
               "sort": "none"
             },
-            "xField": "region",
+            "xField": "Field",
             "xTickLabelRotation": 0,
             "xTickLabelSpacing": 0
           },
           "pluginVersion": "10.2.0",
           "targets": [
             {
-              "cacheDurationSeconds": 300,
               "datasource": {
-                "type": "marcusolsson-json-datasource",
-                "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
               },
-              "fields": [
-                {
-                  "jsonPath": "$.*.*.download_time"
-                },
-                {
-                  "jsonPath": "$.*.*.region",
-                  "language": "jsonpath",
-                  "name": ""
-                }
-              ],
-              "method": "GET",
-              "queryParams": "",
-              "refId": "A",
-              "urlPath": ""
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "livepeer_orch_test_stream_download_time",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
             }
           ],
           "title": "Download Time",
           "transformations": [
             {
-              "id": "filterByValue",
+              "id": "joinByLabels",
               "options": {
-                "filters": [
-                  {
-                    "config": {
-                      "id": "regex",
-                      "options": {
-                        "value": "FRA|LON|PRG"
-                      }
-                    },
-                    "fieldName": "region"
-                  }
-                ],
-                "match": "any",
-                "type": "include"
+                "value": "region"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "LAX": true,
+                  "MDW": true,
+                  "NYC": true,
+                  "SAO": true,
+                  "SIN": true,
+                  "__name__": true,
+                  "instance": true,
+                  "job": true,
+                  "orchestrator": true
+                },
+                "indexByName": {
+                  "FRA": 0,
+                  "LAX": 7,
+                  "LON": 1,
+                  "MDW": 8,
+                  "NYC": 9,
+                  "PRG": 2,
+                  "SAO": 10,
+                  "SIN": 11,
+                  "__name__": 3,
+                  "instance": 4,
+                  "job": 5,
+                  "orchestrator": 6
+                },
+                "renameByName": {}
+              }
+            },
+            {
+              "id": "reduce",
+              "options": {
+                "reducers": [
+                  "lastNotNull"
+                ]
               }
             }
           ],
@@ -3418,10 +3627,10 @@
         },
         {
           "datasource": {
-            "type": "marcusolsson-json-datasource",
-            "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "description": "Orchestrator segment upload time",
+          "description": "Orchestrator test stream segment upload time",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3453,7 +3662,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "orange",
@@ -3473,13 +3683,13 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 58
+            "y": 66
           },
           "id": 42,
           "options": {
             "barRadius": 0,
             "barWidth": 0.97,
-            "colorByField": "upload_time",
+            "colorByField": "Last *",
             "fullHighlight": false,
             "groupWidth": 0.7,
             "legend": {
@@ -3495,52 +3705,71 @@
               "mode": "single",
               "sort": "none"
             },
-            "xField": "region",
+            "xField": "Field",
             "xTickLabelRotation": 0,
             "xTickLabelSpacing": 0
           },
           "pluginVersion": "10.2.0",
           "targets": [
             {
-              "cacheDurationSeconds": 300,
               "datasource": {
-                "type": "marcusolsson-json-datasource",
-                "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
               },
-              "fields": [
-                {
-                  "jsonPath": "$.*.*.upload_time"
-                },
-                {
-                  "jsonPath": "$.*.*.region",
-                  "language": "jsonpath",
-                  "name": ""
-                }
-              ],
-              "method": "GET",
-              "queryParams": "",
-              "refId": "A",
-              "urlPath": ""
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "livepeer_orch_test_stream_upload_time",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
             }
           ],
           "title": "Upload Time",
           "transformations": [
             {
-              "id": "filterByValue",
+              "id": "joinByLabels",
               "options": {
-                "filters": [
-                  {
-                    "config": {
-                      "id": "regex",
-                      "options": {
-                        "value": "FRA|LON|PRG"
-                      }
-                    },
-                    "fieldName": "region"
-                  }
-                ],
-                "match": "any",
-                "type": "include"
+                "value": "region"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "LAX": true,
+                  "MDW": true,
+                  "NYC": true,
+                  "SAO": true,
+                  "SIN": true,
+                  "__name__": true,
+                  "instance": true,
+                  "job": true,
+                  "orchestrator": true
+                },
+                "indexByName": {
+                  "FRA": 0,
+                  "LAX": 7,
+                  "LON": 1,
+                  "MDW": 8,
+                  "NYC": 9,
+                  "PRG": 2,
+                  "SAO": 10,
+                  "SIN": 11,
+                  "__name__": 3,
+                  "instance": 4,
+                  "job": 5,
+                  "orchestrator": 6
+                },
+                "renameByName": {}
+              }
+            },
+            {
+              "id": "reduce",
+              "options": {
+                "reducers": [
+                  "lastNotNull"
+                ]
               }
             }
           ],
@@ -3548,10 +3777,10 @@
         },
         {
           "datasource": {
-            "type": "marcusolsson-json-datasource",
-            "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "description": "Orchestrator segment transcode time",
+          "description": "Orchestrator test stream segment transcode time",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3583,7 +3812,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "orange",
@@ -3603,13 +3833,13 @@
             "h": 8,
             "w": 12,
             "x": 5,
-            "y": 66
+            "y": 74
           },
           "id": 41,
           "options": {
             "barRadius": 0,
             "barWidth": 0.97,
-            "colorByField": "transcode_time",
+            "colorByField": "Last *",
             "fullHighlight": false,
             "groupWidth": 0.7,
             "legend": {
@@ -3625,52 +3855,71 @@
               "mode": "single",
               "sort": "none"
             },
-            "xField": "region",
+            "xField": "Field",
             "xTickLabelRotation": 0,
             "xTickLabelSpacing": 0
           },
           "pluginVersion": "10.2.0",
           "targets": [
             {
-              "cacheDurationSeconds": 300,
               "datasource": {
-                "type": "marcusolsson-json-datasource",
-                "uid": "d0babdeb-330f-46a8-bada-16384f9e89fd"
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
               },
-              "fields": [
-                {
-                  "jsonPath": "$.*.*.transcode_time"
-                },
-                {
-                  "jsonPath": "$.*.*.region",
-                  "language": "jsonpath",
-                  "name": ""
-                }
-              ],
-              "method": "GET",
-              "queryParams": "",
-              "refId": "A",
-              "urlPath": ""
+              "editorMode": "code",
+              "exemplar": false,
+              "expr": "livepeer_orch_test_stream_transcode_time",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
             }
           ],
           "title": "Transcode Time",
           "transformations": [
             {
-              "id": "filterByValue",
+              "id": "joinByLabels",
               "options": {
-                "filters": [
-                  {
-                    "config": {
-                      "id": "regex",
-                      "options": {
-                        "value": "FRA|LON|PRG"
-                      }
-                    },
-                    "fieldName": "region"
-                  }
-                ],
-                "match": "any",
-                "type": "include"
+                "value": "region"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "LAX": true,
+                  "MDW": true,
+                  "NYC": true,
+                  "SAO": true,
+                  "SIN": true,
+                  "__name__": true,
+                  "instance": true,
+                  "job": true,
+                  "orchestrator": true
+                },
+                "indexByName": {
+                  "FRA": 0,
+                  "LAX": 7,
+                  "LON": 1,
+                  "MDW": 8,
+                  "NYC": 9,
+                  "PRG": 2,
+                  "SAO": 10,
+                  "SIN": 11,
+                  "__name__": 3,
+                  "instance": 4,
+                  "job": 5,
+                  "orchestrator": 6
+                },
+                "renameByName": {}
+              }
+            },
+            {
+              "id": "reduce",
+              "options": {
+                "reducers": [
+                  "lastNotNull"
+                ]
               }
             }
           ],
@@ -3688,210 +3937,7 @@
     "orchestrator"
   ],
   "templating": {
-    "list": [
-      {
-        "current": {
-          "selected": false,
-          "text": "1915.5861810340787",
-          "value": "1915.5861810340787"
-        },
-        "datasource": {
-          "type": "yesoreyeram-infinity-datasource",
-          "uid": "PD0067CAD9A63E081"
-        },
-        "definition": "Infinity- (infinity) json",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "eth_price",
-        "options": [],
-        "query": {
-          "infinityQuery": {
-            "columns": [
-              {
-                "selector": "EUROC",
-                "text": "Euro",
-                "type": "number"
-              }
-            ],
-            "filters": [],
-            "format": "table",
-            "parser": "backend",
-            "refId": "variable",
-            "root_selector": "$.data.rates",
-            "source": "url",
-            "type": "json",
-            "url": "https://api.coinbase.com/v2/exchange-rates",
-            "url_options": {
-              "data": "",
-              "method": "GET",
-              "params": [
-                {
-                  "key": "currency",
-                  "value": "ETH"
-                }
-              ]
-            }
-          },
-          "query": "",
-          "queryType": "infinity"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "6.365724464444757",
-          "value": "6.365724464444757"
-        },
-        "datasource": {
-          "type": "yesoreyeram-infinity-datasource",
-          "uid": "PD0067CAD9A63E081"
-        },
-        "definition": "Infinity- (infinity) json",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "lpt_price",
-        "options": [],
-        "query": {
-          "infinityQuery": {
-            "columns": [
-              {
-                "selector": "EUROC",
-                "text": "Euro",
-                "type": "number"
-              }
-            ],
-            "filters": [],
-            "format": "table",
-            "parser": "backend",
-            "refId": "variable",
-            "root_selector": "$.data.rates",
-            "source": "url",
-            "type": "json",
-            "url": "https://api.coinbase.com/v2/exchange-rates",
-            "url_options": {
-              "data": "",
-              "method": "GET",
-              "params": [
-                {
-                  "key": "currency",
-                  "value": "LPT"
-                }
-              ]
-            }
-          },
-          "query": "",
-          "queryType": "infinity"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "900000",
-          "value": "900000"
-        },
-        "datasource": {
-          "type": "yesoreyeram-infinity-datasource",
-          "uid": "PD0067CAD9A63E081"
-        },
-        "definition": "Infinity- (infinity) json",
-        "description": "Orchestrator fee share",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "fee_share",
-        "options": [],
-        "query": {
-          "infinityQuery": {
-            "columns": [
-              {
-                "selector": "feeShare",
-                "text": "",
-                "type": "number"
-              }
-            ],
-            "filters": [],
-            "format": "table",
-            "parser": "backend",
-            "refId": "variable",
-            "root_selector": "$.pageProps.account.transcoder",
-            "source": "url",
-            "type": "json",
-            "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-            "url_options": {
-              "data": "",
-              "method": "GET"
-            }
-          },
-          "query": "",
-          "queryType": "infinity"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "100000",
-          "value": "100000"
-        },
-        "datasource": {
-          "type": "yesoreyeram-infinity-datasource",
-          "uid": "PD0067CAD9A63E081"
-        },
-        "definition": "Infinity- (infinity) json",
-        "description": "Orchestrator reward cut",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "reward_cut",
-        "options": [],
-        "query": {
-          "infinityQuery": {
-            "columns": [
-              {
-                "selector": "rewardCut",
-                "text": "",
-                "type": "number"
-              }
-            ],
-            "filters": [],
-            "format": "table",
-            "parser": "backend",
-            "refId": "variable",
-            "root_selector": "$.pageProps.account.transcoder",
-            "source": "url",
-            "type": "json",
-            "url": "https://explorer.livepeer.org/_next/data/xe8lg6V7gubXcRErA1lxB/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating.json?account=0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039",
-            "url_options": {
-              "data": "",
-              "method": "GET"
-            }
-          },
-          "query": "",
-          "queryType": "infinity"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      }
-    ]
+    "list": []
   },
   "time": {
     "from": "now-24h",
@@ -3914,6 +3960,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 18,
+  "version": 39,
   "weekStart": ""
 }
