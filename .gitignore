@@ -15,3 +15,4 @@ transcoding/livepeer/config/lporch.cfg
 
 # Secret files
 .eth_password.txt
+.env

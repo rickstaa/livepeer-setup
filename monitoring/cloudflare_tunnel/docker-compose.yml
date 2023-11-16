@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  cloudflare-tunnel:
+    container_name: cloudflare-tunnel
+    image: "cloudflare/cloudflared:latest"
+    command: "tunnel --no-autoupdate run --token $CLOUDFLARE_TOKEN"
+    restart: unless-stopped
+    networks:
+      - livepeer # The container network to wich the tunnel will be attached.
+
+networks:
+  livepeer:
+    external: true
