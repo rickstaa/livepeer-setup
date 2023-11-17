@@ -80,9 +80,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -150,9 +151,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -221,9 +223,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -314,9 +317,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -407,9 +411,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -500,9 +505,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -593,9 +599,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -683,9 +690,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -747,9 +755,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -812,9 +821,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -2434,9 +2444,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -2504,9 +2515,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -2827,9 +2839,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -2837,7 +2850,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(increase(livepeer_tickets_recv[100y])*(0.0000006667)) - (sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0)) * 37973)",
+          "expr": "sum(increase(livepeer_tickets_recv[100y])*(0.0000026667)) - (sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0)) * 37973)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -2897,9 +2910,10 @@
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -2980,7 +2994,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3070,7 +3084,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3159,7 +3173,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3542,6 +3556,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 32,
+  "version": 35,
   "weekStart": ""
 }
