@@ -2850,7 +2850,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(increase(livepeer_tickets_recv[100y])*(0.0000026667)) - (sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0)) * 37973)",
+          "expr": "sum(increase(livepeer_tickets_recv[100y])*(0.0000006667)) - (sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0)) * 37973)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -3274,7 +3274,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3370,7 +3371,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3465,7 +3467,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3556,6 +3559,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 35,
+  "version": 37,
   "weekStart": ""
 }

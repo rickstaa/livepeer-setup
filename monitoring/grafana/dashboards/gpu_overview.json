@@ -83,7 +83,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -91,11 +91,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_TEMP)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_GPU_TEMP)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "GPU {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -235,12 +235,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_TEMP)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_GPU_TEMP)",
           "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{modelName}}",
+          "legendFormat": "{{modelName}} - {{gpu}}",
           "refId": "A"
         }
       ],
@@ -311,7 +311,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -319,11 +319,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_MEM_COPY_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_MEM_COPY_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "GPU {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -425,11 +425,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_MEM_COPY_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_MEM_COPY_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{modelName}}",
+          "legendFormat": "{{modelName}} - {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -501,7 +501,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -509,11 +509,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_GPU_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "GPU {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -615,11 +615,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_GPU_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_GPU_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{modelName}}",
+          "legendFormat": "{{modelName}} - {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -691,7 +691,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -699,11 +699,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_ENC_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_ENC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "GPU {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -805,11 +805,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_ENC_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_ENC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{modelName}}",
+          "legendFormat": "{{modelName}} - {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -845,7 +845,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -880,7 +881,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "datasource": {
@@ -888,11 +889,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_DEC_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_DEC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "GPU {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -949,7 +950,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -993,11 +995,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (modelName, device) (DCGM_FI_DEV_DEC_UTIL)",
+          "expr": "sum by (modelName, device, gpu) (DCGM_FI_DEV_DEC_UTIL)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{modelName}}",
+          "legendFormat": "{{modelName}} - {{gpu}}",
           "range": true,
           "refId": "A"
         }
@@ -1048,8 +1050,8 @@
     ]
   },
   "timezone": "",
-  "title": "Nvidia GPU",
+  "title": "GPU Overview",
   "uid": "fnvhnzGmk",
-  "version": 2,
+  "version": 5,
   "weekStart": ""
 }
