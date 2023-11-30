@@ -83,7 +83,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -154,7 +154,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -226,7 +226,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -320,7 +320,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -414,7 +414,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -508,7 +508,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -602,7 +602,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -693,7 +693,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -758,7 +758,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -824,7 +824,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -911,7 +911,7 @@
             "h": 3,
             "w": 4,
             "x": 0,
-            "y": 8
+            "y": 24
           },
           "id": 44,
           "options": {
@@ -975,7 +975,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 8
+            "y": 24
           },
           "id": 34,
           "options": {
@@ -1039,7 +1039,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 8
+            "y": 24
           },
           "id": 36,
           "options": {
@@ -1103,7 +1103,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 8
+            "y": 24
           },
           "id": 38,
           "options": {
@@ -1167,7 +1167,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 8
+            "y": 24
           },
           "id": 40,
           "options": {
@@ -1231,7 +1231,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 8
+            "y": 24
           },
           "id": 42,
           "options": {
@@ -1312,7 +1312,7 @@
             "h": 6,
             "w": 2,
             "x": 0,
-            "y": 9
+            "y": 25
           },
           "id": 75,
           "options": {
@@ -1381,7 +1381,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 9
+            "y": 25
           },
           "id": 65,
           "options": {
@@ -1448,7 +1448,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 9
+            "y": 25
           },
           "id": 76,
           "options": {
@@ -1601,7 +1601,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 9
+            "y": 25
           },
           "id": 78,
           "options": {
@@ -1754,7 +1754,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 9
+            "y": 25
           },
           "id": 79,
           "options": {
@@ -1907,7 +1907,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 9
+            "y": 25
           },
           "id": 80,
           "options": {
@@ -2060,7 +2060,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 9
+            "y": 25
           },
           "id": 81,
           "options": {
@@ -2213,7 +2213,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 12
+            "y": 28
           },
           "id": 66,
           "options": {
@@ -2276,7 +2276,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 12
+            "y": 28
           },
           "id": 77,
           "options": {
@@ -2447,7 +2447,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -2463,6 +2463,78 @@
         }
       ],
       "title": "Total Tickets Received",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Total claimed fees",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ETH"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 3,
+        "y": 10
+      },
+      "id": 82,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "livepeer_orch_total_volume_eth",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Claimed Fees",
+      "transformations": [],
       "type": "stat"
     },
     {
@@ -2491,14 +2563,14 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "ETH"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
-        "x": 3,
+        "w": 3,
+        "x": 5,
         "y": 10
       },
       "id": 30,
@@ -2518,7 +2590,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -2536,7 +2608,7 @@
           "refId": "A"
         }
       ],
-      "title": "Expected Payout in ETH",
+      "title": "Expected Payout",
       "type": "stat"
     },
     {
@@ -2842,7 +2914,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -2858,6 +2930,103 @@
         }
       ],
       "title": "Luck",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Total value of the claimed fees",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyEUR"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 3,
+        "y": 14
+      },
+      "id": 83,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum(livepeer_orch_total_volume_eth)",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "ETH_price{currency=\"EUR\"}",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "$A*$B",
+          "hide": false,
+          "refId": "C",
+          "type": "math"
+        }
+      ],
+      "title": "Total Claimed Fee Value",
+      "transformations": [],
       "type": "stat"
     },
     {
@@ -2892,8 +3061,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 5,
-        "x": 3,
+        "w": 3,
+        "x": 5,
         "y": 14
       },
       "id": 48,
@@ -2913,7 +3082,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "targets": [
         {
           "datasource": {
@@ -2994,7 +3163,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3084,7 +3253,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3173,7 +3342,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3274,8 +3443,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3371,8 +3539,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3467,8 +3634,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3559,6 +3725,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 37,
+  "version": 2,
   "weekStart": ""
 }
