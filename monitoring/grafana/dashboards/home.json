@@ -41,7 +41,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "## Transcode.eth\n\n**Transcode.eth**, aka **Transcode.ninja**, operates with ninja-like agility—swift, agile, and precise in every transcoding task. Fuelled by a 4 Gbps high-uptime internet connection near Frankfurt and London nodes, our services offer high performance, low latency, and unwavering reliability. 🥷 Our commitment to environmental responsibility is as steadfast as our precision; we proudly run on green energy. 🌿 \n\n### Key Features\n\n- **Low Latency:** Real-time transcoding for broadcasters and viewers.\n- **High Performance:** Scalable to three NVIDIA 1070 cards or higher, ensuring consistent excellence.\n- **Transparency:** Operations, tools, and metrics proudly shared on [Transcode.ninja](https://transcode.ninja).\n- **High Uptimes:** Ensuring stability with robust internet and strategic positioning.\n\n### Value Proposition\n\n#### For Delegators:\n\n- **Transparent Operations:** Track performance via public dashboards for trust and transparency.\n- **Stable Returns:** High-performance transcoding, strategic location, and high uptimes contribute to reliable returns.\n\n#### For Broadcasters:\n\n- **Low Latency:** Real-time transcoding for a smooth streaming experience.\n- **High-Quality Output:** Consistently delivers superior transcoded videos.\n- **Reliability:** High uptimes and strategic positioning provide a reliable transcoding solution.\n- **Green-Powered Precision**: Your streams are delivered with eco-friendly precision. 🌿🥷\n\n### Get Involved\n\nExplore Transcode.eth's power by delegating your Livepeer tokens.\n\n- [<img src=\"https://thegivingblock.com/wp-content/uploads/2021/08/Livepeer-LPT-logo.png\" height=\"20\" width=\"20\">&nbsp;Delegate Now: Delegate to Transcode.eth](https://explorer.livepeer.org/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating)\n\n### Contact Us\n\nFor inquiries, feedback, or collaboration opportunities:\n\n- **Discord:** [rickstaa](https://discordapp.com/users/700320643962634300)\n\nThanks for choosing Transcode.eth—where speed, agility, and strategic connectivity combine to enhance your video transcoding experience on Livepeer!\n",
+        "content": "\n## Transcode.ninja\n\n**Transcode.eth**, also known as **Transcode.ninja**, moves with ninja-like agility—swift, agile, and precise in every transcoding task. Fueled by a 4 Gbps high-uptime internet connection strategically positioned near Frankfurt and London nodes, our services ensure high performance, low latency, full transparency, and unwavering reliability. 🥷 Our dedication to environmental responsibility is as unwavering as our precision; we proudly operate on green energy. 🌿\n\n### Key Features\n\n- **Low Latency:** Real-time transcoding for broadcasters and viewers.\n- **High Performance:** Scalable to three NVIDIA 1070 cards or higher, ensuring consistent excellence.\n- **Transparency:** Operations, tools, and metrics proudly shared on [Transcode.ninja](https://transcode.ninja).\n- **High Uptimes:** Ensuring stability with robust internet and strategic positioning.\n\n### Value Proposition\n\n#### For Delegators:\n\n- **Transparent Operations:** Track performance, expenses and income via public dashboards for trust and transparency.\n- **Stable Returns:** High-performance transcoding, strategic location, and high uptimes contribute to reliable returns.\n\n#### For Broadcasters:\n\n- **Low Latency:** Real-time transcoding for a smooth streaming experience.\n- **High-Quality Output:** Consistently delivers superior transcoded videos.\n- **Reliability:** High uptimes and strategic positioning provide a reliable transcoding solution.\n- **Green-Powered Precision**: Your streams are delivered with eco-friendly precision. 🌿🥷\n\n### Get Involved\n\n\nUnlock the full potential of **Transcode.eth** by either selecting us as your [preferred transcoder](https://explorer.livepeer.org/accounts/0x5bdeedca9c6346b0ce6b17ffa8) or delegating your Livepeer tokens.\n\n- [<img src=\"https://thegivingblock.com/wp-content/uploads/2021/08/Livepeer-LPT-logo.png\" height=\"20\" width=\"20\">&nbsp;Delegate Now: Delegate to Transcode.eth](https://explorer.livepeer.org/accounts/0x5bdeedca9c6346b0ce6b17ffa8227a4dace37039/orchestrating)\n\n### Contact Us\n\nFor inquiries, feedback, or collaboration opportunities:\n\n- **Discord:** [rickstaa](https://discordapp.com/users/700320643962634300)\n\nThanks for choosing **Transcode.eth**—where speed, agility, and strategic connectivity combine to enhance your video transcoding experience on Livepeer!\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.2.2",
@@ -93,7 +93,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "At transcode.eth, an open-source ethos is central to our philosophy. We share tools for transparency and collaboration, including:\n\n- **[livepeer-exporter](https://github.com/transcodeninja/livepeer-exporter):** A lightweight Prometheus exporter for Livepeer orchestrator metrics, seamlessly integrating with diverse Livepeer endpoints. Explore its capabilities on our [GitHub repository](https://github.com/transcodeninja/livepeer-exporter) and join us in fostering an open and collaborative ecosystem.\n\nAdditionally, we actively contribute to other Livepeer repositories, enriching the community and strengthening our commitment to the advancement of decentralized video processing. 🌐✨",
+        "content": "At transcode.eth, an open-source ethos is central to our philosophy. We share tools for transparency and collaboration, including:\n\n- **[livepeer-exporter](https://github.com/transcodeninja/livepeer-exporter):** A lightweight Prometheus exporter for Livepeer orchestrator metrics, seamlessly integrating with diverse Livepeer endpoints. Explore its capabilities on our [GitHub repository](https://github.com/transcodeninja/livepeer-exporter) and join us in fostering an open and collaborative ecosystem.\n\nAdditionally, we actively contribute to other Livepeer repositories, enriching the community and strengthening our commitment to advancing decentralized video processing. 🌐✨",
         "mode": "markdown"
       },
       "pluginVersion": "10.2.2",
@@ -127,20 +127,20 @@
       "type": "text"
     }
   ],
-  "refresh": "",
+  "refresh": false,
   "schemaVersion": 38,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-5m",
-    "to": "now"
+    "from": "2023-11-30T14:53:39.239Z",
+    "to": "2023-11-30T15:03:39.241Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Home",
   "uid": "d38596a9-33a1-4045-9ea4-b7e97fa2e85e",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
