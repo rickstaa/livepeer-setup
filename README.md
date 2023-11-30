@@ -1,6 +1,6 @@
 # LivePeer Transcoding and Monitoring Setup
 
-Welcome to the core of my LivePeer setup! This repository collects Docker files, scripts, configurations, and resources that power my [LivePeer](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
+Welcome to the core of the [transcode.ninja](https://transcode.ninja) setup! This repository collects Docker files, scripts, configurations, and resources that power the [Transcode.ninja](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
 
 ## Clone Instructions
 

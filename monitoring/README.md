@@ -1,6 +1,6 @@
 # Monitoring
 
-Welcome to the LivePeer setup of the [transcode.ninja](https://transcode.ninja/) orchestrator. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), our monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
+Welcome to the LivePeer monitoring setup of the [transcode.ninja](https://transcode.ninja/) orchestrator. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), our monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
 
 ## Monitoring Arsenal
 
