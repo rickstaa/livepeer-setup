@@ -1,6 +1,6 @@
 # Monitoring
 
-Welcome to my LivePeer monitoring setup. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), my monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
+Welcome to the LivePeer setup of the [transcode.ninja](https://transcode.ninja/) orchestrator. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), our monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
 
 ## Monitoring Arsenal
 
@@ -24,7 +24,7 @@ Ensure your system is ready for the monitoring journey by meeting these prerequi
 1. **Clone this Repository with its submodules:**
 
    ```bash
-   git clone --recurse-submodules git@github.com:rickstaa/livepeer-setup.git
+   git clone --recurse-submodules git@github.com:transcodeninja/livepeer-setup.git
    ```
 
 2. **Launch the Monitoring Tools with Docker Compose:**

@@ -7,7 +7,7 @@ Welcome to the core of my LivePeer setup! This repository collects Docker files,
 This repository contains several submodules. To clone this repository and its submodules, execute the following command:
 
 ```bash
-git clone --recurse-submodules git@github.com:rickstaa/livepeer-setup.git
+git clone --recurse-submodules git@github.com:transcodeninja/livepeer-setup.git
 ```
 
 ## System Snapshot

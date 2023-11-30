@@ -73,7 +73,7 @@ services:
     restart: unless-stopped
 
   livepeer-exporter:
-    image: rickstaa/livepeer-exporter:latest
+    image: transcodeninja/livepeer-exporter:latest
     container_name: livepeer-exporter
     ports:
       - "9153:9153"
