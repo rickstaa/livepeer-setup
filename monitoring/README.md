@@ -1,6 +1,6 @@
 # Monitoring
 
-Welcome to the LivePeer monitoring setup of the [transcode.ninja](https://transcode.ninja/) orchestrator. Following the insightful guidance of this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana), our monitoring setup is a blend of precision and efficiency, covering both transcoder and system performance.
+Welcome to the monitoring system of the [transcode.ninja](https://transcode.ninja/) LivePeer orchestrator. This system allows us to monitor the transcoder and overall system performance closely. Our monitoring system's dashboards were based on the ones found in this [forum post](https://forum.livepeer.org/t/guide-transcoder-monitoring-with-prometheus-grafana).
 
 ## Monitoring Arsenal
 
@@ -9,6 +9,7 @@ Welcome to the LivePeer monitoring setup of the [transcode.ninja](https://transc
 - [dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter): Keep a keen eye on your Nvidia GPU.
 - [liquidctl](https://github.com/liquidctl/liquidctl) and [liquidctl-exporter](https://github.com/paha/liquidctl-exporter): Monitor your [Corsair HX1200i PSU](https://www.corsair.com/us/en/p/psu/cp-9020070-na/hxi-series-hx1200i-high-performance-atx-power-supply-1200-watt-80-plus-platinum-certified-psu-cp-9020070-na) with precision.
 - [node-exporter](https://grafana.com/oss/prometheus/exporters/node-exporter/?tab=installation): Comprehensive system statistics at your fingertips.
+- [livepeer-exporter](https://github.com/transcodeninja/livepeer-exporter): A Prometheus exporter that fetches additional Livepeer orchestrator metrics, complementing the existing ones provided by the official Livepeer monitoring system.
 
 ## Getting Started
 
@@ -33,7 +34,7 @@ Ensure your system is ready for the monitoring journey by meeting these prerequi
    docker compose up -d
    ```
 
-3. **Re-create the library panels:** Unfortunately, Grafana does [not yet support provisioning of library panels](https://github.com/grafana/grafana/issues/46247). This means you must manually re-create and re-link the library panels in the `livepeer_payements_overview.json` and `psu_overview.json` dashboards. This is a one-time task.
+3. **Re-create the library panels:** Unfortunately, Grafana does [not yet support provisioning of library panels](https://github.com/grafana/grafana/issues/46247). You must manually re-create and re-link the library panels in the `livepeer_payements_overview.json` and `psu_overview.json` dashboards. This is a one-time task.
 
 4. **Setup alerting**: The dashboards have various alerts. It's essential to configure your [Grafana notification policies and contact points](https://grafana.com/docs/grafana/latest/alerting/) to ensure you receive these alerts on your preferred channel.
 

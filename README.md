@@ -1,6 +1,6 @@
 # LivePeer Transcoding and Monitoring Setup
 
-Welcome to the core of the [transcode.ninja](https://transcode.ninja) setup! This repository collects Docker files, scripts, configurations, and resources that power the [Transcode.ninja](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
+Welcome to the core of the [transcode.ninja](https://transcode.ninja) orchestrator setup! This repository collects Docker files, scripts, configurations, and resources that power the [Transcode.ninja](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to monitor the transcoder and overall system performance closely.
 
 ## Clone Instructions
 
@@ -20,12 +20,12 @@ git clone --recurse-submodules git@github.com:transcodeninja/livepeer-setup.git
 
 ## System Benchmarking
 
-Assess your system's performance using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. For effective tool utilisation, find comprehensive instructions in the [official documentation](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
+You can assess your system's performance using the [livepeer_bench](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/livepeer_bench.go) tool. For information on this tool, please check the instructions in the [official Livepeer documentation](https://docs.livepeer.org/orchestrators/guides/benchmark-transcoding).
 
 ## Transcoding Setup
 
-Explore the `transcoding` folder to discover the details of my transcoding setup. Refer to the [transcoding README](transcoding/README.md) for a clear overview.
+You can check out the `transcoding` folder to discover the details of our transcoding setup. For more information, see the [transcoding README](transcoding/README.md).
 
 ## Monitoring System
 
-Navigate to the `monitoring` folder for insights into my monitoring setup. For a comprehensive guide, consult the [monitoring README](monitoring/README.md). In this LivePeer hub, transcoding and monitoring seamlessly come together!
+You can check out the `monitoring` folder for insights into our monitoring system. For more information, consult the [monitoring README](monitoring/README.md).

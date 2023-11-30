@@ -1,3 +1,3 @@
 # Prometheus
 
-Contains the configuration for my [Prometheus](https://prometheus.io/) setup.
+Contains the configuration for our [Prometheus](https://prometheus.io/) container.

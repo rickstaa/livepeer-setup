@@ -1,6 +1,6 @@
-# Streamlined LivePeer Orchestrator Setup
+# Main LivePeer Orchestrator Setup
 
-Welcome to the LivePeer Orchestrator Setup! In this folder, find a [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of your LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
+Welcome to the [Transcode. ninja](https://transcode.ninja] main Orchestrator Setup! In this folder, you will find a [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of the main LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
 
 - [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) (or later).
 - [Docker](https://docs.docker.com/engine/install/ubuntu/) (optional but highly recommended).
@@ -14,7 +14,7 @@ Once the prerequisites are met, follow these steps to launch your LivePeer orche
 
 ### Start the Orchestrator
 
-1. Kick things off by renaming `config/lporch_template.cfg` to `config/lporch.cfg` and filling in the required fields.
+1. First, rename the `config/lporch_template.cfg` file to `config/lporch.cfg` and fill in the required fields.
 2. Add a `.eth_password.txt` file to this directory and input your Ethereum wallet password.
 3. Ensure that the root user is the file owner:
 
@@ -39,7 +39,7 @@ Once the prerequisites are met, follow these steps to launch your LivePeer orche
 Your LivePeer orchestrator is now ready to transcode on port `8935`, with the LivePeer CLI server exposed on port `7936`.
 
 > \[!WARNING]
-> Ensure root access for running Docker containers on your system. If you've previously followed [this guide](https://docs.docker.com/engine/install/linux-postinstall/) for non-root users, revert those steps. Failure to do so may expose your wallet password.
+> Ensure root access for running Docker containers on your system. If you've previously followed [this guide](https://docs.docker.com/engine/install/linux-postinstall/) for non-root users, revert those steps. Please do so to protect your wallet password.
 
 ### Unleash the CLI Server
 
