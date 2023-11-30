@@ -1,6 +1,6 @@
 # Cloudflare tunnel
 
-This folder contains a docker-compose file for creating a [Cloudflare tunnel](https://www.cloudflare.com/en-gb/products/tunnel/). This tunnel is used to safely share the [transcode.ninja](https://transcode.ninja) Grafana dashboard with the outside world. Please change the docker network containing the service you exposed in the Zero-Trusts interface.
+This folder contains a docker-compose file for creating a [Cloudflare tunnel](https://www.cloudflare.com/en-gb/products/tunnel/). This tunnel is used to share the [transcode.ninja](https://transcode.ninja) Grafana dashboards safely with the outside world. Please change the docker network containing the service you exposed in the Zero-Trusts interface.
 
 ## Installation
 

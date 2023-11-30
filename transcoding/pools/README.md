@@ -6,4 +6,4 @@ This directory is home to pool repositories as submodules. To pull these submodu
 git submodule update --init --recursive
 ```
 
-Once cloned, leverage the `Dockerfile` or `docker-compose.yml` files within each pool directory to launch the pool. For detailed instructions, consult the `README.md` file in each pool directory. Dive in and make a splash with your pool configuration!
+Once cloned, leverage the `Dockerfile` or `docker-compose.yml` files within each pool directory to launch the pool. For detailed instructions, consult the `README.md` file in each pool directory. 
