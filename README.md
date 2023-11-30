@@ -29,3 +29,7 @@ You can check out the `transcoding` folder to discover the details of our transc
 ## Monitoring System
 
 You can check out the `monitoring` folder for insights into our monitoring system. For more information, consult the [monitoring README](monitoring/README.md).
+
+## Contributing
+
+Feel free to open an issue if you have ideas on how to make this repository better or if you want to report a bug! All contributions are welcome. :rocket: Please consult the [contribution guidelines](CONTRIBUTING.md) for more information.
