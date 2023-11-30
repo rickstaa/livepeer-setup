@@ -20,7 +20,8 @@ services:
       - "host.docker.internal:host-gateway"
 
   grafana:
-    image: grafana/grafana:latest
+    build:
+      context: ./grafana
     container_name: grafana
     volumes:
       - ./grafana/dashboards:/var/lib/grafana/dashboards
