@@ -1,4 +1,4 @@
-# LivePeer Transcoding and Monitoring Hub
+# LivePeer Transcoding and Monitoring Setup
 
 Welcome to the core of my LivePeer setup! This repository collects Docker files, scripts, configurations, and resources that power my [LivePeer](https://livepeer.org/) transcoder. It also hosts a robust monitoring system to keep a close eye on the transcoder and overall system performance.
 
