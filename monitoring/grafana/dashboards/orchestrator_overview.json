@@ -1544,7 +1544,7 @@
           "expr": "livepeer_orch_reward_amount",
           "hide": false,
           "instant": false,
-          "legendFormat": "bonded amound",
+          "legendFormat": "reward amount",
           "range": true,
           "refId": "Bonded Amount"
         },
@@ -1557,7 +1557,7 @@
           "expr": "livepeer_orch_reward_block_time",
           "hide": false,
           "instant": false,
-          "legendFormat": "start round",
+          "legendFormat": "block time",
           "range": true,
           "refId": "Start Round"
         }
@@ -1639,7 +1639,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Reward"
+              "options": "livepeer_orch_winning_ticket_amount"
             },
             "properties": [
               {
@@ -1651,7 +1651,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Local Time"
+              "options": "livepeer_orch_winning_ticket_block_time"
             },
             "properties": [
               {
@@ -1700,7 +1700,7 @@
           "expr": "livepeer_orch_winning_ticket_amount",
           "hide": false,
           "instant": false,
-          "legendFormat": "bonded amound",
+          "legendFormat": "ticket amount",
           "range": true,
           "refId": "Bonded Amount"
         },
@@ -1713,7 +1713,7 @@
           "expr": "livepeer_orch_winning_ticket_block_time",
           "hide": false,
           "instant": false,
-          "legendFormat": "start round",
+          "legendFormat": "block time",
           "range": true,
           "refId": "Start Round"
         }
@@ -1750,7 +1750,9 @@
               "livepeer_orch_delegator_bonded_amount": "Stake",
               "livepeer_orch_delegator_start_round": "Since Round",
               "livepeer_orch_reward_amount": "Reward",
-              "livepeer_orch_reward_block_time": "Local Time"
+              "livepeer_orch_reward_block_time": "Local Time",
+              "livepeer_orch_winning_ticket_amount": "Ticket Amount",
+              "livepeer_orch_winning_ticket_block_time": "Local Time"
             }
           }
         }
@@ -2831,7 +2833,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "rate(livepeer_source_segment_duration_seconds_sum{node_type=\"orch\"}[1m]) / rate(livepeer_source_segment_duration_seconds_count{node_type=\"orch\"}[1m])",
+          "expr": "sum(rate(livepeer_source_segment_duration_seconds_sum{node_type=\"orch\"}[1m]) / rate(livepeer_source_segment_duration_seconds_count{node_type=\"orch\"}[1m]))",
           "interval": "",
           "legendFormat": "__auto",
           "range": true,
@@ -3055,9 +3057,11 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "rate(livepeer_download_time_seconds_sum{node_type=\"orch\"}[1m]) / rate(livepeer_download_time_seconds_count{node_type=\"orch\"}[1m])",
+          "editorMode": "code",
+          "expr": "sum(rate(livepeer_download_time_seconds_sum{node_type=\"orch\"}[1m]) / rate(livepeer_download_time_seconds_count{node_type=\"orch\"}[1m]))",
           "interval": "",
           "legendFormat": "{{instance}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -3994,6 +3998,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 47,
+  "version": 3,
   "weekStart": ""
 }

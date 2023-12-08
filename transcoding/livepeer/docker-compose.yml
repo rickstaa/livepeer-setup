@@ -13,12 +13,14 @@ services:
       - 8935:8935
     volumes:
       - ./config/lporch.cfg:/root/lporch.cfg
+      - ./config/price_per_broadcaster.json:/root/price_per_broadcaster.json
       - lpdata:/root/.lpData
       - "/etc/timezone:/etc/timezone:ro" # Set timezone to host timezone.
       - "/etc/localtime:/etc/localtime:ro" # Set time to host time.
     command: ["-config", "/root/lporch.cfg", "-ethPassword", "/run/secrets/eth_password"]
     secrets:
       - eth_password
+    privileged: true # Needed to prevent https://github.com/livepeer/go-livepeer/issues/2570
 
 volumes:
   lpdata:
