@@ -1129,7 +1129,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "livepeer_orch_total_claimed_rewards",
+          "expr": "livepeer_orch_total_rewards",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -4091,6 +4091,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 9,
+  "version": 10,
   "weekStart": ""
 }
