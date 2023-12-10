@@ -1,1 +1,9 @@
-{"broadcasters":[{"ethaddress":"0x68d6FF3938Ff63d2df16567Cb8CA9772e14496F7","priceperunit":0,"pixelsperunit":1}]}
+{
+    "broadcasters": [
+        {
+            "ethaddress": "0x68d6FF3938Ff63d2df16567Cb8CA9772e14496F7",
+            "priceperunit": 0,
+            "pixelsperunit": 1
+        }
+    ]
+}

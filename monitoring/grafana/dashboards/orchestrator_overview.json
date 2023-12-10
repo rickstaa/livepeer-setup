@@ -1210,7 +1210,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(livepeer_orch_total_claimed_rewards)",
+          "expr": "sum(livepeer_orch_total_rewards)",
           "hide": true,
           "instant": true,
           "legendFormat": "__auto",
@@ -1372,12 +1372,7 @@
         },
         "frameIndex": 1,
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "Since Round"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "10.2.2",
       "targets": [
@@ -1489,6 +1484,10 @@
               {
                 "id": "unit",
                 "value": "LPT"
+              },
+              {
+                "id": "custom.width",
+                "value": 87
               }
             ]
           },
@@ -1501,6 +1500,34 @@
               {
                 "id": "unit",
                 "value": "dateTimeAsLocal"
+              },
+              {
+                "id": "custom.width",
+                "value": 188
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Hash"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 203
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Round"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 99
               }
             ]
           }
@@ -1529,7 +1556,7 @@
         "sortBy": [
           {
             "desc": true,
-            "displayName": "Local Time"
+            "displayName": "Round"
           }
         ]
       },
@@ -1559,7 +1586,20 @@
           "instant": false,
           "legendFormat": "block time",
           "range": true,
-          "refId": "Start Round"
+          "refId": "Block Time"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_reward_round",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "Round"
         }
       ],
       "title": "💎 Claimed Rewards",
@@ -1588,13 +1628,19 @@
           "id": "organize",
           "options": {
             "excludeByName": {},
-            "indexByName": {},
+            "indexByName": {
+              "id": 3,
+              "livepeer_orch_reward_amount": 1,
+              "livepeer_orch_reward_block_time": 2,
+              "livepeer_orch_reward_round": 0
+            },
             "renameByName": {
               "id": "Hash",
               "livepeer_orch_delegator_bonded_amount": "Stake",
               "livepeer_orch_delegator_start_round": "Since Round",
               "livepeer_orch_reward_amount": "Reward",
-              "livepeer_orch_reward_block_time": "Local Time"
+              "livepeer_orch_reward_block_time": "Local Time",
+              "livepeer_orch_reward_round": "Round"
             }
           }
         }
@@ -1659,6 +1705,42 @@
                 "value": "dateTimeAsLocal"
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Hash"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 88
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Local Time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 181
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Ticket Amount"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 159
+              }
+            ]
           }
         ]
       },
@@ -1685,7 +1767,7 @@
         "sortBy": [
           {
             "desc": true,
-            "displayName": "Local Time"
+            "displayName": "Round"
           }
         ]
       },
@@ -1715,7 +1797,20 @@
           "instant": false,
           "legendFormat": "block time",
           "range": true,
-          "refId": "Start Round"
+          "refId": "Block Time"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "livepeer_orch_winning_ticket_round",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "Round"
         }
       ],
       "title": "🎟️ Winning Tickets",
@@ -1744,7 +1839,12 @@
           "id": "organize",
           "options": {
             "excludeByName": {},
-            "indexByName": {},
+            "indexByName": {
+              "id": 3,
+              "livepeer_orch_winning_ticket_amount": 1,
+              "livepeer_orch_winning_ticket_block_time": 2,
+              "livepeer_orch_winning_ticket_round": 0
+            },
             "renameByName": {
               "id": "Hash",
               "livepeer_orch_delegator_bonded_amount": "Stake",
@@ -1752,7 +1852,8 @@
               "livepeer_orch_reward_amount": "Reward",
               "livepeer_orch_reward_block_time": "Local Time",
               "livepeer_orch_winning_ticket_amount": "Ticket Amount",
-              "livepeer_orch_winning_ticket_block_time": "Local Time"
+              "livepeer_orch_winning_ticket_block_time": "Local Time",
+              "livepeer_orch_winning_ticket_round": "Round"
             }
           }
         }
@@ -2316,8 +2417,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2439,8 +2539,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2565,8 +2664,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2666,8 +2764,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2793,8 +2890,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2891,8 +2987,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3018,8 +3113,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3116,8 +3210,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3998,6 +4091,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 3,
+  "version": 9,
   "weekStart": ""
 }

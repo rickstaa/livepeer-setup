@@ -766,7 +766,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "livepeer_orch_total_claimed_rewards",
+          "expr": "livepeer_orch_total_rewards",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -832,7 +832,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(livepeer_orch_total_claimed_rewards)",
+          "expr": "sum(livepeer_orch_total_rewards)",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -1009,7 +1009,7 @@
               "refId": "A"
             }
           ],
-          "title": "Cost (all)",
+          "title": "Energy Cost (all)",
           "type": "stat"
         },
         {
@@ -1017,7 +1017,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "Energy cost of the last Year",
+          "description": "All time energy consumption cost",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1043,7 +1043,7 @@
             "x": 7,
             "y": 8
           },
-          "id": 36,
+          "id": 91,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -1067,14 +1067,79 @@
                 "uid": "PBFA97CFB590B2093"
               },
               "editorMode": "code",
-              "expr": "(sum_over_time(sum(liquidctl_estimated_input_power)[1y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000) * 0.37690",
+              "expr": "(sum_over_time(sum(liquidctl_estimated_input_power)[5y:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000) * 0.37690",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "Cost (year)",
+          "title": "Energy Cost (year)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "Energy cost of the last quarter",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 10,
+            "y": 8
+          },
+          "id": 96,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(sum_over_time(sum(liquidctl_estimated_input_power)[90d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000) * 0.37690",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Energy Cost (quarter)",
           "type": "stat"
         },
         {
@@ -1105,7 +1170,7 @@
           "gridPos": {
             "h": 3,
             "w": 3,
-            "x": 10,
+            "x": 13,
             "y": 8
           },
           "id": 38,
@@ -1139,7 +1204,7 @@
               "refId": "A"
             }
           ],
-          "title": "Cost (month)",
+          "title": "Energy Cost (month)",
           "type": "stat"
         },
         {
@@ -1170,7 +1235,7 @@
           "gridPos": {
             "h": 3,
             "w": 3,
-            "x": 13,
+            "x": 16,
             "y": 8
           },
           "id": 40,
@@ -1204,7 +1269,7 @@
               "refId": "A"
             }
           ],
-          "title": "Cost (week)",
+          "title": "Energy Cost (week)",
           "type": "stat"
         },
         {
@@ -1235,7 +1300,7 @@
           "gridPos": {
             "h": 3,
             "w": 3,
-            "x": 16,
+            "x": 19,
             "y": 8
           },
           "id": 42,
@@ -1269,8 +1334,1043 @@
               "refId": "A"
             }
           ],
-          "title": "Cost (day)",
+          "title": "Energy Cost (day)",
           "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The mean gas price",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-blue",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Gwei"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 4,
+            "x": 0,
+            "y": 11
+          },
+          "id": 99,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "avg(livepeer_orch_winning_ticket_gas_price)/10^9",
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Mean Tickets Gas Price"
+            }
+          ],
+          "title": "Mean Gas Price",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The total gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 4,
+            "y": 11
+          },
+          "id": 98,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_total_gas_cost+livepeer_orch_tickets_total_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (all)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The annual gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 7,
+            "y": 11
+          },
+          "id": 92,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_year_gas_cost+livepeer_orch_tickets_year_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (year)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The quaterly gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 10,
+            "y": 11
+          },
+          "id": 93,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_ninety_day_gas_cost+livepeer_orch_tickets_ninety_day_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (quater)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The monthly gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 13,
+            "y": 11
+          },
+          "id": 97,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_thirty_day_gas_cost+livepeer_orch_tickets_thirty_day_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (month)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The weekly gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 16,
+            "y": 11
+          },
+          "id": 94,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_week_gas_cost+livepeer_orch_tickets_week_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (week)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The daily gas cost for claiming rewards and redeeming tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "light-red",
+                "mode": "fixed"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "text"
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 19,
+            "y": 11
+          },
+          "id": 95,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_rewards_day_gas_cost+livepeer_orch_tickets_day_gas_cost)/10^9)*0.85",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Cost (day)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The total amount of gas paid by the orchestrator for claiming rewards and redeeming winning tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "ETH"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byFrameRefID",
+                  "options": "EUR"
+                },
+                "properties": [
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  },
+                  {
+                    "id": "unit",
+                    "value": "currencyEUR"
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "EUR"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 14
+          },
+          "id": 88,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "((livepeer_orch_tickets_total_gas_cost+livepeer_orch_rewards_total_gas_cost)/10^9)*0.85",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "ETH",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Paid",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The total amount of gas paid by the orchestrator for claiming rewards",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "ETH"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byFrameRefID",
+                  "options": "EUR"
+                },
+                "properties": [
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  },
+                  {
+                    "id": "unit",
+                    "value": "currencyEUR"
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "EUR"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 14
+          },
+          "id": 89,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_rewards_total_gas_cost/10^9)*0.85",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "ETH",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Paid (rewards)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The total amount of gas paid by the orchestrator for redeeming winning tickets",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "ETH"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byFrameRefID",
+                  "options": "EUR"
+                },
+                "properties": [
+                  {
+                    "id": "custom.axisPlacement",
+                    "value": "right"
+                  },
+                  {
+                    "id": "unit",
+                    "value": "currencyEUR"
+                  },
+                  {
+                    "id": "displayName",
+                    "value": "EUR"
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 14
+          },
+          "id": 90,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_total_gas_cost/10^9)*0.85",
+              "hide": false,
+              "instant": false,
+              "legendFormat": "ETH",
+              "range": true,
+              "refId": "Gas Cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "ETH Price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "${Gas Cost}*${ETH Price}",
+              "hide": false,
+              "refId": "EUR",
+              "type": "math"
+            }
+          ],
+          "title": "Gas Paid (tickets)",
+          "type": "timeseries"
         }
       ],
       "title": "Costs",
@@ -1429,7 +2529,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative fee value allocated to the orchestrator, calculated from the orchestrator's fee cut and their contributed stake.",
+          "description": "The total fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1565,11 +2665,35 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_total_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
               "hide": false,
               "refId": "total_fee_profit",
               "type": "math"
@@ -1583,7 +2707,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative yearly fee value allocated to the orchestrator, calculated from the orchestrator's fee cut and their contributed stake.",
+          "description": "The yearly fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1612,7 +2736,7 @@
             "x": 7,
             "y": 9
           },
-          "id": 78,
+          "id": 116,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -1719,11 +2843,35 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_year_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
               "hide": false,
               "refId": "total_fee_profit",
               "type": "math"
@@ -1737,7 +2885,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative monthly fee value allocated to the orchestrator, calculated from the orchestrator's fee cut and their contributed stake.",
+          "description": "The quarterly fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1766,7 +2914,185 @@
             "x": 10,
             "y": 9
           },
-          "id": 79,
+          "id": 117,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum(increase(livepeer_ticket_value_recv[90d])) / 10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "fee",
+              "range": true,
+              "refId": "fee"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "ETH_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "eth_price",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$fee*$eth_price",
+              "hide": true,
+              "refId": "fee_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(sum_over_time(sum(liquidctl_estimated_input_power)[90d:]) / count_over_time(sum(liquidctl_estimated_input_power)[1h:]) / 1000) * 0.37690",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "energy_cost",
+              "range": true,
+              "refId": "energy_cost"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_fee_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "fee_cut",
+              "range": true,
+              "refId": "fee_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($fee_value*$fee_cut)",
+              "hide": true,
+              "refId": "fee_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_ninety_day_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
+              "hide": false,
+              "refId": "total_fee_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Fee Profit (quarter)",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The monthly fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 13,
+            "y": 9
+          },
+          "id": 118,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -1873,11 +3199,35 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_thirty_day_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
               "hide": false,
               "refId": "total_fee_profit",
               "type": "math"
@@ -1891,7 +3241,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative weekly fee value allocated to the orchestrator, calculated from the orchestrator's fee cut and their contributed stake.",
+          "description": "The weekly fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1917,10 +3267,10 @@
           "gridPos": {
             "h": 3,
             "w": 3,
-            "x": 13,
+            "x": 16,
             "y": 9
           },
-          "id": 80,
+          "id": 119,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -2027,11 +3377,35 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_week_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
               "hide": false,
               "refId": "total_fee_profit",
               "type": "math"
@@ -2045,7 +3419,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative daily fee value allocated to the orchestrator, calculated from the orchestrator's fee cut and their contributed stake.",
+          "description": "The daily fee allocated to the orchestrator, derived from a calculation involving the orchestrator's fee profit, fee cut, contributed stake, as well as the associated energy and gas costs.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2071,10 +3445,10 @@
           "gridPos": {
             "h": 3,
             "w": 3,
-            "x": 16,
+            "x": 19,
             "y": 9
           },
-          "id": 81,
+          "id": 120,
           "options": {
             "colorMode": "value",
             "graphMode": "none",
@@ -2181,11 +3555,35 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "(livepeer_orch_tickets_day_gas_cost/10^9)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "(($fee_value - $fee_value_orch_cut)*$orch_lpt_share+$fee_value_orch_cut)-$energy_cost-$gas_cost_euro",
               "hide": false,
               "refId": "total_fee_profit",
               "type": "math"
@@ -2267,7 +3665,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "description": "The cumulative rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "description": "The total rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2275,10 +3673,14 @@
               },
               "mappings": [],
               "thresholds": {
-                "mode": "percentage",
+                "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
                   }
                 ]
               },
@@ -2316,10 +3718,10 @@
                 "uid": "PBFA97CFB590B2093"
               },
               "editorMode": "code",
-              "expr": "livepeer_orch_total_claimed_rewards",
+              "expr": "livepeer_orch_total_rewards",
               "hide": true,
               "instant": false,
-              "legendFormat": "rewards",
+              "legendFormat": "__auto",
               "range": true,
               "refId": "rewards"
             },
@@ -2335,6 +3737,19 @@
               "legendFormat": "lpt_price",
               "range": true,
               "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
             },
             {
               "datasource": {
@@ -2386,17 +3801,936 @@
             },
             {
               "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_total_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
                 "name": "Expression",
                 "type": "__expr__",
                 "uid": "__expr__"
               },
-              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+$rewards_value_orch_cut",
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
               "hide": false,
               "refId": "total_rewards_profit",
               "type": "math"
             }
           ],
-          "title": "Total Rewards Profit",
+          "title": "Rewards Profit (all)",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The yearly rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 7,
+            "y": 12
+          },
+          "id": 111,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_year_rewards",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "rewards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "LPT_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "lpt_price",
+              "range": true,
+              "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$rewards*$lpt_price",
+              "hide": true,
+              "refId": "rewards_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_reward_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "reward_cut",
+              "range": true,
+              "refId": "reward_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value*$reward_cut)",
+              "hide": true,
+              "refId": "rewards_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_year_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
+              "hide": false,
+              "refId": "total_rewards_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Rewards Profit (year)",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The quarterly rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 10,
+            "y": 12
+          },
+          "id": 112,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_ninety_day_rewards",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "rewards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "LPT_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "lpt_price",
+              "range": true,
+              "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$rewards*$lpt_price",
+              "hide": true,
+              "refId": "rewards_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_reward_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "reward_cut",
+              "range": true,
+              "refId": "reward_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value*$reward_cut)",
+              "hide": true,
+              "refId": "rewards_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_ninety_day_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
+              "hide": false,
+              "refId": "total_rewards_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Rewards Profit (quarter)",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The monthly rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 13,
+            "y": 12
+          },
+          "id": 113,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_thirty_day_rewards",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "rewards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "LPT_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "lpt_price",
+              "range": true,
+              "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$rewards*$lpt_price",
+              "hide": true,
+              "refId": "rewards_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_reward_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "reward_cut",
+              "range": true,
+              "refId": "reward_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value*$reward_cut)",
+              "hide": true,
+              "refId": "rewards_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_thirty_day_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
+              "hide": false,
+              "refId": "total_rewards_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Rewards Profit (month)",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The weekly rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 16,
+            "y": 12
+          },
+          "id": 114,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_week_rewards",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "rewards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "LPT_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "lpt_price",
+              "range": true,
+              "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$rewards*$lpt_price",
+              "hide": true,
+              "refId": "rewards_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_reward_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "reward_cut",
+              "range": true,
+              "refId": "reward_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value*$reward_cut)",
+              "hide": true,
+              "refId": "rewards_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_week_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
+              "hide": false,
+              "refId": "total_rewards_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Rewards Profit (week)",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "The daily rewards allocated to the orchestrator, calculated from the orchestrator's reward cut and their contributed stake.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "red"
+                  },
+                  {
+                    "color": "green",
+                    "value": 0
+                  }
+                ]
+              },
+              "unit": "currencyEUR"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 3,
+            "w": 3,
+            "x": 19,
+            "y": 12
+          },
+          "id": 115,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "10.2.2",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_day_rewards",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "rewards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "LPT_price{currency=\"EUR\"}",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "lpt_price",
+              "range": true,
+              "refId": "lpt_price"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "sum without (currency) (ETH_price{currency=\"EUR\"})",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "eth_price"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "$rewards*$lpt_price",
+              "hide": true,
+              "refId": "rewards_value",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_reward_cut",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "reward_cut",
+              "range": true,
+              "refId": "reward_cut"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "round(livepeer_orch_stake/livepeer_orch_total_stake)",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "orch_lpt_share",
+              "range": true,
+              "refId": "orch_lpt_share"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value*$reward_cut)",
+              "hide": true,
+              "refId": "rewards_value_orch_cut",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+              },
+              "editorMode": "code",
+              "expr": "livepeer_orch_rewards_day_gas_cost/10^9",
+              "hide": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "gas_cost"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($gas_cost*$eth_price)*0.85",
+              "hide": true,
+              "refId": "gas_cost_euro",
+              "type": "math"
+            },
+            {
+              "datasource": {
+                "name": "Expression",
+                "type": "__expr__",
+                "uid": "__expr__"
+              },
+              "expression": "($rewards_value-$rewards_value_orch_cut)*$orch_lpt_share+($rewards_value_orch_cut-$gas_cost_euro)",
+              "hide": false,
+              "refId": "total_rewards_profit",
+              "type": "math"
+            }
+          ],
+          "title": "Rewards Profit (day)",
           "transformations": [],
           "type": "stat"
         }
@@ -2905,7 +5239,7 @@
           "calcs": [],
           "displayMode": "list",
           "placement": "right",
-          "showLegend": true
+          "showLegend": false
         },
         "tooltip": {
           "mode": "multi",
@@ -2928,19 +5262,6 @@
           "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(increase(livepeer_tickets_recv[1h]))",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "Hourly Rate",
-          "range": true,
-          "refId": "B"
         }
       ],
       "title": "# Tickets Received",
@@ -2951,7 +5272,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "The orchestrator sentiment",
+      "description": "Short-term sentiment of the orchestrator and delegators based on the expected luck. ",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2961,65 +5282,10 @@
           "mappings": [
             {
               "options": {
-                "from": 200,
+                "from": 2,
                 "result": {
                   "index": 0,
                   "text": "🤩"
-                },
-                "to": null
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 175,
-                "result": {
-                  "index": 1,
-                  "text": "🤑"
-                },
-                "to": 200
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 150,
-                "result": {
-                  "index": 2,
-                  "text": "😆"
-                },
-                "to": 175
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 125,
-                "result": {
-                  "index": 3,
-                  "text": "😄"
-                },
-                "to": 150
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 100,
-                "result": {
-                  "index": 4,
-                  "text": " 😁"
-                },
-                "to": 125
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 75,
-                "result": {
-                  "index": 5,
-                  "text": "😄"
                 },
                 "to": 100
               },
@@ -3027,23 +5293,78 @@
             },
             {
               "options": {
-                "from": 50,
+                "from": 1.75,
                 "result": {
-                  "index": 6,
-                  "text": "😀"
+                  "index": 1,
+                  "text": "🤑"
                 },
-                "to": 75
+                "to": 2
               },
               "type": "range"
             },
             {
               "options": {
-                "from": 25,
+                "from": 1.5,
+                "result": {
+                  "index": 2,
+                  "text": "😆"
+                },
+                "to": 1.75
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 1.25,
+                "result": {
+                  "index": 3,
+                  "text": "😄"
+                },
+                "to": 1.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "index": 4,
+                  "text": " 😁"
+                },
+                "to": 1.25
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 0.75,
+                "result": {
+                  "index": 5,
+                  "text": "😄"
+                },
+                "to": 1
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 0.5,
+                "result": {
+                  "index": 6,
+                  "text": "😀"
+                },
+                "to": 0.75
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 0.25,
                 "result": {
                   "index": 7,
                   "text": "😊"
                 },
-                "to": 50
+                "to": 0.5
               },
               "type": "range"
             },
@@ -3054,13 +5375,13 @@
                   "index": 8,
                   "text": "🙂"
                 },
-                "to": 25
+                "to": 0.25
               },
               "type": "range"
             },
             {
               "options": {
-                "from": -25,
+                "from": -0.25,
                 "result": {
                   "index": 9,
                   "text": "😐"
@@ -3071,23 +5392,56 @@
             },
             {
               "options": {
-                "from": -50,
+                "from": -0.5,
                 "result": {
                   "index": 10,
                   "text": "😔 "
                 },
-                "to": -25
+                "to": -0.25
               },
               "type": "range"
             },
             {
               "options": {
-                "from": -75,
+                "from": -0.75,
                 "result": {
                   "index": 11,
                   "text": "😞"
                 },
-                "to": -50
+                "to": -0.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": -1,
+                "result": {
+                  "index": 12,
+                  "text": "😢"
+                },
+                "to": -0.75
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": -1.25,
+                "result": {
+                  "index": 13,
+                  "text": "😥"
+                },
+                "to": -1
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": -1.5,
+                "result": {
+                  "index": 14,
+                  "text": "😩"
+                },
+                "to": -1.25
               },
               "type": "range"
             },
@@ -3095,120 +5449,20 @@
               "options": {
                 "from": -100,
                 "result": {
-                  "index": 12,
-                  "text": "😢"
+                  "index": 15,
+                  "text": "😭"
                 },
-                "to": -75
+                "to": -1.5
               },
               "type": "range"
             }
           ],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
-                "color": "dark-red",
-                "value": null
-              },
-              {
-                "color": "semi-dark-red",
-                "value": -175
-              },
-              {
-                "color": "red",
-                "value": -150
-              },
-              {
-                "color": "light-red",
-                "value": -140
-              },
-              {
-                "color": "super-light-red",
-                "value": -125
-              },
-              {
-                "color": "dark-orange",
-                "value": -100
-              },
-              {
-                "color": "semi-dark-orange",
-                "value": -90
-              },
-              {
-                "color": "orange",
-                "value": -80
-              },
-              {
-                "color": "light-orange",
-                "value": -70
-              },
-              {
-                "color": "super-light-orange",
-                "value": -60
-              },
-              {
-                "color": "dark-yellow",
-                "value": -50
-              },
-              {
-                "color": "semi-dark-yellow",
-                "value": -40
-              },
-              {
-                "color": "yellow",
-                "value": -30
-              },
-              {
-                "color": "light-yellow",
-                "value": -20
-              },
-              {
-                "color": "super-light-yellow",
-                "value": -10
-              },
-              {
                 "color": "text",
-                "value": 0
-              },
-              {
-                "color": "#1F60C4",
-                "value": 10
-              },
-              {
-                "color": "semi-dark-blue",
-                "value": 20
-              },
-              {
-                "color": "blue",
-                "value": 30
-              },
-              {
-                "color": "light-blue",
-                "value": 40
-              },
-              {
-                "color": "super-light-blue",
-                "value": 50
-              },
-              {
-                "color": "super-light-green",
-                "value": 60
-              },
-              {
-                "color": "light-green",
-                "value": 70
-              },
-              {
-                "color": "green",
-                "value": 80
-              },
-              {
-                "color": "semi-dark-green",
-                "value": 90
-              },
-              {
-                "color": "dark-green",
-                "value": 100
+                "value": null
               }
             ]
           },
@@ -3246,7 +5500,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "0.012 * sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0))",
+          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.012",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -3259,7 +5513,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "0.012 * sum(increase(livepeer_tickets_recv[100y])) * 0.0000006667",
+          "expr": "sum(increase(livepeer_ticket_value_recv[10y]))/10^9",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -3272,7 +5526,7 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
-          "expression": "($Expected-$Actual)/$Expected",
+          "expression": "($Expected-$Actual)/0.012",
           "hide": false,
           "refId": "B",
           "type": "math"
@@ -3286,7 +5540,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "How lucky you are based on the number of received tickets",
+      "description": "The orchestrator's likelihood of winning a new ticket based on how many fees are overdue",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3294,7 +5548,7 @@
           },
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "dark-red",
@@ -3302,59 +5556,59 @@
               },
               {
                 "color": "semi-dark-red",
-                "value": -175
+                "value": -1.8
               },
               {
                 "color": "red",
-                "value": -150
+                "value": -1.6
               },
               {
                 "color": "light-red",
-                "value": -140
+                "value": -1.4
               },
               {
                 "color": "super-light-red",
-                "value": -125
+                "value": -1.2
               },
               {
                 "color": "dark-orange",
-                "value": -100
+                "value": -1
               },
               {
                 "color": "semi-dark-orange",
-                "value": -90
+                "value": -0.9
               },
               {
                 "color": "orange",
-                "value": -80
+                "value": -0.8
               },
               {
                 "color": "light-orange",
-                "value": -70
+                "value": -0.7
               },
               {
                 "color": "super-light-orange",
-                "value": -60
+                "value": -0.6
               },
               {
                 "color": "dark-yellow",
-                "value": -50
+                "value": -0.5
               },
               {
                 "color": "semi-dark-yellow",
-                "value": -40
+                "value": -0.4
               },
               {
                 "color": "yellow",
-                "value": -30
+                "value": -0.3
               },
               {
                 "color": "light-yellow",
-                "value": -20
+                "value": -0.2
               },
               {
                 "color": "super-light-yellow",
-                "value": -10
+                "value": -0.1
               },
               {
                 "color": "text",
@@ -3362,43 +5616,43 @@
               },
               {
                 "color": "dark-blue",
-                "value": 10
+                "value": 0.1
               },
               {
                 "color": "semi-dark-blue",
-                "value": 20
+                "value": 0.2
               },
               {
                 "color": "blue",
-                "value": 30
+                "value": 0.3
               },
               {
                 "color": "light-blue",
-                "value": 40
+                "value": 0.4
               },
               {
                 "color": "super-light-blue",
-                "value": 50
+                "value": 0.5
               },
               {
                 "color": "super-light-green",
-                "value": 60
+                "value": 0.6
               },
               {
                 "color": "light-green",
-                "value": 70
+                "value": 0.7
               },
               {
                 "color": "green",
-                "value": 80
+                "value": 0.8
               },
               {
                 "color": "semi-dark-green",
-                "value": 90
+                "value": 0.9
               },
               {
                 "color": "dark-green",
-                "value": 100
+                "value": 1
               }
             ]
           },
@@ -3436,7 +5690,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "0.012 * sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0))",
+          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.012",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -3449,7 +5703,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "0.012 * sum(increase(livepeer_tickets_recv[100y])) * 0.0000006667",
+          "expr": "sum(increase(livepeer_ticket_value_recv[10y]))/10^9",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -3462,13 +5716,13 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
-          "expression": "($Expected-$Actual)/$Expected",
+          "expression": "($Expected-$Actual)/0.012",
           "hide": false,
-          "refId": "B",
+          "refId": "Win Prob",
           "type": "math"
         }
       ],
-      "title": "Luck",
+      "title": "Expected Luck",
       "type": "stat"
     },
     {
@@ -3716,7 +5970,8 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(livepeer_payment_recv_errors)",
+          "editorMode": "code",
+          "expr": "sum(increase(livepeer_payment_recv_errors[100y]))",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -3757,93 +6012,104 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "fill": 1,
-      "fillGradient": 0,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "ETH (gwei)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 8,
         "y": 18
       },
-      "hiddenSeries": false,
       "id": 14,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "livepeer_value_redeemed",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Value Redeemed",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "ETH (gwei)",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "aliasColors": {},
@@ -3982,8 +6248,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4080,8 +6345,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4178,8 +6442,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4272,6 +6535,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 6,
+  "version": 20,
   "weekStart": ""
 }
