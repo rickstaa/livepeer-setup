@@ -1372,7 +1372,12 @@
         },
         "frameIndex": 1,
         "showHeader": true,
-        "sortBy": []
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Since Round"
+          }
+        ]
       },
       "pluginVersion": "10.2.2",
       "targets": [
@@ -2002,7 +2007,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9 - 0.012",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9 - 0.048",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -2666,7 +2671,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2766,7 +2772,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2892,7 +2899,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2989,7 +2997,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4093,6 +4102,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 11,
+  "version": 14,
   "weekStart": ""
 }

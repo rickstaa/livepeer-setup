@@ -1,101 +1,68 @@
 apiVersion: 1
 groups:
-  - orgId: 1
-    name: Tickets
-    folder: livepeer
-    interval: 5m
-    rules:
-      - uid: bac299f6-57db-4653-9092-4c132b74cdc1
-        title: Winning Ticket Received
-        condition: C
-        data:
-          - refId: A
-            relativeTimeRange:
-              from: 604800
-              to: 0
-            datasourceUid: PBFA97CFB590B2093
-            model:
-              datasource:
-                type: prometheus
-                uid: PBFA97CFB590B2093
-              editorMode: code
-              expr: rate(sum(livepeer_winning_tickets_recv)[$__rate_interval:])
-              format: time_series
-              instant: false
-              interval: ""
-              intervalFactor: 1
-              intervalMs: 15000
-              legendFormat: __auto
-              maxDataPoints: 43200
-              range: true
-              refId: A
-          - refId: B
-            datasourceUid: __expr__
-            model:
-              conditions:
-                - evaluator:
-                    params:
-                      - 0
-                      - 0
-                    type: gt
-                  operator:
-                    type: and
-                  query:
-                    params: []
-                  reducer:
-                    params: []
-                    type: avg
-                  type: query
-              datasource:
-                name: Expression
-                type: __expr__
-                uid: __expr__
-              expression: A
-              intervalMs: 1000
-              maxDataPoints: 43200
-              reducer: last
-              refId: B
-              settings:
-                mode: replaceNN
-                replaceWithValue: 0
-              type: reduce
-          - refId: C
-            datasourceUid: __expr__
-            model:
-              conditions:
-                - evaluator:
-                    params:
-                      - 0
-                      - 0
-                    type: gt
-                  operator:
-                    type: and
-                  query:
-                    params: []
-                  reducer:
-                    params: []
-                    type: avg
-                  type: query
-              datasource:
-                name: Expression
-                type: __expr__
-                uid: __expr__
-              expression: B
-              intervalMs: 1000
-              maxDataPoints: 43200
-              refId: C
-              type: threshold
-        dashboardUid: rA7cG7DWz
-        panelId: 12
-        noDataState: NoData
-        execErrState: Error
-        for: 5m
-        annotations:
-          __dashboardUid__: rA7cG7DWz
-          __panelId__: "12"
-          description: ""
-          runbook_url: ""
-          summary: "You just received a winning ticket \U0001F389. Please ensure that you redeem this ticket in 2 rounds."
-        labels:
-          channel: telegram
-        isPaused: false
+    - orgId: 1
+      name: Tickets
+      folder: livepeer
+      interval: 5m
+      rules:
+        - uid: bac299f6-57db-4653-9092-4c132b74cdc1
+          title: Winning Ticket Received
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: PBFA97CFB590B2093
+              model:
+                datasource:
+                    type: prometheus
+                    uid: PBFA97CFB590B2093
+                editorMode: code
+                exemplar: false
+                expr: sum(increase(livepeer_winning_tickets_recv[10m])) or vector(0)
+                instant: true
+                intervalMs: 1000
+                legendFormat: __auto
+                maxDataPoints: 43200
+                range: false
+                refId: A
+            - refId: C
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0
+                            - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: ""
+            runbook_url: ""
+            summary: "You just received a winning ticket \U0001F389. Please ensure that you redeem this ticket in 2 rounds."
+          labels:
+            channel: telegram
+          isPaused: false

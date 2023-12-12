@@ -1006,7 +1006,7 @@
             "h": 3,
             "w": 4,
             "x": 0,
-            "y": 8
+            "y": 16
           },
           "id": 44,
           "options": {
@@ -1072,7 +1072,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 8
+            "y": 16
           },
           "id": 34,
           "options": {
@@ -1138,7 +1138,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 8
+            "y": 16
           },
           "id": 91,
           "options": {
@@ -1204,7 +1204,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 8
+            "y": 16
           },
           "id": 96,
           "options": {
@@ -1270,7 +1270,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 8
+            "y": 16
           },
           "id": 38,
           "options": {
@@ -1336,7 +1336,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 8
+            "y": 16
           },
           "id": 40,
           "options": {
@@ -1402,7 +1402,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 8
+            "y": 16
           },
           "id": 42,
           "options": {
@@ -1472,7 +1472,7 @@
             "h": 3,
             "w": 4,
             "x": 0,
-            "y": 11
+            "y": 19
           },
           "id": 99,
           "options": {
@@ -1538,7 +1538,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 11
+            "y": 19
           },
           "id": 98,
           "options": {
@@ -1629,7 +1629,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 11
+            "y": 19
           },
           "id": 92,
           "options": {
@@ -1720,7 +1720,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 11
+            "y": 19
           },
           "id": 93,
           "options": {
@@ -1811,7 +1811,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 11
+            "y": 19
           },
           "id": 97,
           "options": {
@@ -1902,7 +1902,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 11
+            "y": 19
           },
           "id": 94,
           "options": {
@@ -1993,7 +1993,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 11
+            "y": 19
           },
           "id": 95,
           "options": {
@@ -2140,7 +2140,7 @@
             "h": 8,
             "w": 8,
             "x": 0,
-            "y": 14
+            "y": 22
           },
           "id": 88,
           "options": {
@@ -2283,7 +2283,7 @@
             "h": 8,
             "w": 8,
             "x": 8,
-            "y": 14
+            "y": 22
           },
           "id": 89,
           "options": {
@@ -2426,7 +2426,7 @@
             "h": 8,
             "w": 8,
             "x": 16,
-            "y": 14
+            "y": 22
           },
           "id": 90,
           "options": {
@@ -2530,7 +2530,7 @@
             "h": 6,
             "w": 2,
             "x": 0,
-            "y": 9
+            "y": 17
           },
           "id": 75,
           "options": {
@@ -2601,7 +2601,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 9
+            "y": 17
           },
           "id": 65,
           "options": {
@@ -2670,7 +2670,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 9
+            "y": 17
           },
           "id": 76,
           "options": {
@@ -2849,7 +2849,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 9
+            "y": 17
           },
           "id": 116,
           "options": {
@@ -3028,7 +3028,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 9
+            "y": 17
           },
           "id": 117,
           "options": {
@@ -3207,7 +3207,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 9
+            "y": 17
           },
           "id": 118,
           "options": {
@@ -3386,7 +3386,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 9
+            "y": 17
           },
           "id": 119,
           "options": {
@@ -3565,7 +3565,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 9
+            "y": 17
           },
           "id": 120,
           "options": {
@@ -3744,7 +3744,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 12
+            "y": 20
           },
           "id": 66,
           "options": {
@@ -3813,7 +3813,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 12
+            "y": 20
           },
           "id": 77,
           "options": {
@@ -3993,7 +3993,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 12
+            "y": 20
           },
           "id": 111,
           "options": {
@@ -4173,7 +4173,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 12
+            "y": 20
           },
           "id": 112,
           "options": {
@@ -4353,7 +4353,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 12
+            "y": 20
           },
           "id": 113,
           "options": {
@@ -4533,7 +4533,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 12
+            "y": 20
           },
           "id": 114,
           "options": {
@@ -4713,7 +4713,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 12
+            "y": 20
           },
           "id": 115,
           "options": {
@@ -4882,6 +4882,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "The total number of tickets received by the orchestrator",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -4897,7 +4898,8 @@
                 "value": null
               }
             ]
-          }
+          },
+          "unit": "short"
         },
         "overrides": []
       },
@@ -4912,7 +4914,7 @@
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
-        "orientation": "auto",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -4933,12 +4935,12 @@
           "editorMode": "code",
           "expr": "sum(increase(livepeer_tickets_recv[10y]))",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "Total",
           "range": true,
-          "refId": "A"
+          "refId": "Total"
         }
       ],
-      "title": "Total Tickets Received",
+      "title": "Tickets",
       "type": "stat"
     },
     {
@@ -4946,23 +4948,103 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "The tickets that were received since a ticket was won.",
+      "description": "Luck Index for Orchestrator: Exceeding Redeemed Fees Relative to Workload",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "blue",
-            "mode": "fixed"
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue",
+                "color": "dark-red",
                 "value": null
+              },
+              {
+                "color": "semi-dark-red",
+                "value": -0.9
+              },
+              {
+                "color": "red",
+                "value": -0.8
+              },
+              {
+                "color": "light-red",
+                "value": -0.7
+              },
+              {
+                "color": "super-light-red",
+                "value": -0.6
+              },
+              {
+                "color": "dark-orange",
+                "value": -0.5
+              },
+              {
+                "color": "orange",
+                "value": -0.4
+              },
+              {
+                "color": "dark-yellow",
+                "value": -0.3
+              },
+              {
+                "color": "yellow",
+                "value": -0.2
+              },
+              {
+                "color": "super-light-yellow",
+                "value": -0.1
+              },
+              {
+                "color": "text",
+                "value": 0
+              },
+              {
+                "color": "light-blue",
+                "value": 0.1
+              },
+              {
+                "color": "blue",
+                "value": 0.2
+              },
+              {
+                "color": "semi-dark-blue",
+                "value": 0.3
+              },
+              {
+                "color": "dark-blue",
+                "value": 0.4
+              },
+              {
+                "color": "super-light-green",
+                "value": 0.5
+              },
+              {
+                "color": "super-light-green",
+                "value": 0.6
+              },
+              {
+                "color": "light-green",
+                "value": 0.7
+              },
+              {
+                "color": "green",
+                "value": 0.8
+              },
+              {
+                "color": "semi-dark-green",
+                "value": 0.9
+              },
+              {
+                "color": "dark-green",
+                "value": 1
               }
             ]
-          }
+          },
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -4972,10 +5054,10 @@
         "x": 2,
         "y": 10
       },
-      "id": 84,
+      "id": 122,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -4996,12 +5078,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(increase(livepeer_tickets_recv[10y]))",
+          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.048",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "Received"
+          "refId": "Actual"
         },
         {
           "datasource": {
@@ -5009,25 +5091,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(increase(livepeer_winning_tickets_recv[100y]) OR on() vector(0))",
+          "expr": "sum(increase(livepeer_ticket_value_recv[10y]))/10^9",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "Won"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "1 / 0.0000006667",
-          "hide": true,
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "Needed"
+          "refId": "Expected"
         },
         {
           "datasource": {
@@ -5035,13 +5104,13 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
-          "expression": "$Received - ($Needed*$Won)",
+          "expression": "($Actual-$Expected)/$Expected",
           "hide": false,
-          "refId": "A",
+          "refId": "Win Prob",
           "type": "math"
         }
       ],
-      "title": "New Tickets Received",
+      "title": "Luck",
       "type": "stat"
     },
     {
@@ -5177,7 +5246,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9 -0.012",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9 - 0.048",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -5189,108 +5258,6 @@
       ],
       "title": "Expected Payout",
       "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "Ticket Value received minus ticket value redeemed",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "ETH",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 10
-      },
-      "id": 29,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "10.2.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Expected Payout in ETH",
-      "type": "timeseries"
     },
     {
       "datasource": {
@@ -5355,7 +5322,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 16,
+        "x": 8,
         "y": 10
       },
       "id": 6,
@@ -5398,7 +5365,150 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "Short-term sentiment of the orchestrator and delegators based on the expected luck. ",
+      "description": "The number of tickets received per day",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "# Tickets",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sum(rate(livepeer_ticket_value_recv[1d])*60*60*24)/10^9"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "unit",
+                "value": "ETH"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": ""
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 10
+      },
+      "id": 123,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(livepeer_tickets_recv[1d]))",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{label_name}}",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(livepeer_ticket_value_recv[1d])*60*60*24)/10^9",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "Projected Income"
+        }
+      ],
+      "title": "# Daily Tickets Received",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Short-term sentiment based on the win probability",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -5626,7 +5736,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.012",
+          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.048",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -5658,7 +5768,7 @@
           "type": "math"
         }
       ],
-      "title": "Sentiment",
+      "title": "Short Sentiment",
       "type": "stat"
     },
     {
@@ -5666,7 +5776,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "The orchestrator's likelihood of winning a new ticket based on how many fees are overdue",
+      "description": "The orchestrator's probability of winning a new 0.012 ticket based on how many fees are overdue",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -5816,7 +5926,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.012",
+          "expr": "(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0))/10^9 + 0.048",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -5848,7 +5958,7 @@
           "type": "math"
         }
       ],
-      "title": "Expected Luck",
+      "title": "Win Probability",
       "type": "stat"
     },
     {
@@ -6009,7 +6119,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
+          "expr": "clamp_min((sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9 - 0.048,0)",
           "format": "time_series",
           "hide": true,
           "interval": "",
@@ -6047,6 +6157,107 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 1,
+            "axisSoftMin": -1,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 18
+      },
+      "id": 12,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "right",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(livepeer_winning_tickets_recv[5y]))",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "# Winning Tickets Received",
+      "type": "timeseries"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -6060,8 +6271,297 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 0,
+        "x": 8,
         "y": 18
+      },
+      "hiddenSeries": false,
+      "id": 26,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "10.2.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "expr": "livepeer_ticket_redemption_errors",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Ticket Redemption Errors",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "# Errors",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Ticket Value received minus ticket value redeemed",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "ETH",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 18
+      },
+      "id": 29,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "(sum(increase(livepeer_ticket_value_recv[10y]))-(sum(increase(livepeer_value_redeemed[10y])) OR on() vector(0)))/10^9",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Expected Payout in ETH",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "ETH (gwei)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 26
+      },
+      "id": 14,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(livepeer_value_redeemed[10y]))/10^9 + 0.048",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Value Redeemed",
+      "type": "timeseries"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 26
       },
       "hiddenSeries": false,
       "id": 22,
@@ -6151,7 +6651,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "ETH (gwei)",
+            "axisLabel": "ETH (wei)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -6200,293 +6700,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 8,
-        "y": 18
-      },
-      "id": 14,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "10.2.2",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "livepeer_value_redeemed",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Value Redeemed",
-      "type": "timeseries"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
         "x": 16,
-        "y": 18
-      },
-      "hiddenSeries": false,
-      "id": 26,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "10.2.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "expr": "livepeer_ticket_redemption_errors",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Ticket Redemption Errors",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "# Errors",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMax": 1,
-            "axisSoftMin": -1,
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "fieldMinMax": false,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 26
-      },
-      "id": 12,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "hidden",
-          "placement": "right",
-          "showLegend": false
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "10.2.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(increase(livepeer_winning_tickets_recv[5y]))",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "# Winning Tickets Received",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "ETH (wei)",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
         "y": 26
       },
       "id": 28,
@@ -6568,7 +6782,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -6583,8 +6798,8 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 16,
-        "y": 26
+        "x": 8,
+        "y": 34
       },
       "id": 2,
       "links": [],
@@ -6619,7 +6834,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "30s",
+  "refresh": "",
   "schemaVersion": 38,
   "tags": [
     "livepeer",
@@ -6661,6 +6876,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 23,
+  "version": 26,
   "weekStart": ""
 }
