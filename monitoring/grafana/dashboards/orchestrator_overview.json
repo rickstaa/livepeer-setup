@@ -1951,7 +1951,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "The expected payout when a ticket is won",
+      "description": "The expected payout when a ticket is won. This value is negative when the orchestrator has won more fees than it is entitled to.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2671,8 +2671,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2772,8 +2771,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2899,8 +2897,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2997,8 +2994,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4102,6 +4098,6 @@
   "timezone": "",
   "title": "Orchestrator Overview",
   "uid": "71b6OZ0Gz",
-  "version": 14,
+  "version": 15,
   "weekStart": ""
 }
