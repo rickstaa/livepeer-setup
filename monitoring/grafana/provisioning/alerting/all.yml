@@ -20,7 +20,7 @@ groups:
                     uid: PBFA97CFB590B2093
                 editorMode: code
                 exemplar: false
-                expr: sum(increase(livepeer_winning_tickets_recv[10m])) or vector(0)
+                expr: sum(increase(livepeer_winning_tickets_recv[5m])) or vector(0)
                 instant: true
                 intervalMs: 1000
                 legendFormat: __auto
@@ -56,10 +56,14 @@ groups:
                 maxDataPoints: 43200
                 refId: C
                 type: threshold
+          dashboardUid: rA7cG7DWz
+          panelId: 12
           noDataState: NoData
           execErrState: Error
           for: 5m
           annotations:
+            __dashboardUid__: rA7cG7DWz
+            __panelId__: "12"
             description: ""
             runbook_url: ""
             summary: "You just received a winning ticket \U0001F389. Please ensure that you redeem this ticket in 2 rounds."

@@ -2496,7 +2496,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2512,7 +2513,7 @@
             "h": 6,
             "w": 2,
             "x": 0,
-            "y": 17
+            "y": 9
           },
           "id": 75,
           "options": {
@@ -2566,7 +2567,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2582,7 +2584,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 17
+            "y": 9
           },
           "id": 65,
           "options": {
@@ -2634,7 +2636,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -2650,7 +2653,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 17
+            "y": 9
           },
           "id": 76,
           "options": {
@@ -2812,7 +2815,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -2828,7 +2832,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 17
+            "y": 9
           },
           "id": 116,
           "options": {
@@ -2990,7 +2994,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3006,7 +3011,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 17
+            "y": 9
           },
           "id": 117,
           "options": {
@@ -3168,7 +3173,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3184,7 +3190,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 17
+            "y": 9
           },
           "id": 118,
           "options": {
@@ -3346,7 +3352,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3362,7 +3369,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 17
+            "y": 9
           },
           "id": 119,
           "options": {
@@ -3524,7 +3531,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3540,7 +3548,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 17
+            "y": 9
           },
           "id": 120,
           "options": {
@@ -3702,7 +3710,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3718,7 +3727,7 @@
             "h": 3,
             "w": 2,
             "x": 2,
-            "y": 20
+            "y": 12
           },
           "id": 66,
           "options": {
@@ -3770,7 +3779,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3786,7 +3796,7 @@
             "h": 3,
             "w": 3,
             "x": 4,
-            "y": 20
+            "y": 12
           },
           "id": 77,
           "options": {
@@ -3949,7 +3959,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -3965,7 +3976,7 @@
             "h": 3,
             "w": 3,
             "x": 7,
-            "y": 20
+            "y": 12
           },
           "id": 111,
           "options": {
@@ -4128,7 +4139,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -4144,7 +4156,7 @@
             "h": 3,
             "w": 3,
             "x": 10,
-            "y": 20
+            "y": 12
           },
           "id": 112,
           "options": {
@@ -4307,7 +4319,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -4323,7 +4336,7 @@
             "h": 3,
             "w": 3,
             "x": 13,
-            "y": 20
+            "y": 12
           },
           "id": 113,
           "options": {
@@ -4486,7 +4499,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -4502,7 +4516,7 @@
             "h": 3,
             "w": 3,
             "x": 16,
-            "y": 20
+            "y": 12
           },
           "id": 114,
           "options": {
@@ -4665,7 +4679,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   },
                   {
                     "color": "green",
@@ -4681,7 +4696,7 @@
             "h": 3,
             "w": 3,
             "x": 19,
-            "y": 20
+            "y": 12
           },
           "id": 115,
           "options": {
@@ -5383,8 +5398,7 @@
                 "value": "ETH"
               },
               {
-                "id": "custom.axisLabel",
-                "value": ""
+                "id": "custom.axisLabel"
               },
               {
                 "id": "color",
@@ -5392,6 +5406,10 @@
                   "fixedColor": "green",
                   "mode": "fixed"
                 }
+              },
+              {
+                "id": "displayName",
+                "value": "Projected Income"
               }
             ]
           }
@@ -5430,7 +5448,7 @@
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{label_name}}",
+          "legendFormat": "Tickets",
           "range": true,
           "refId": "A"
         },
@@ -5456,7 +5474,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "Short-term sentiment based on the win probability",
+      "description": "Short-term sentiment based on luck and future win probability.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -5647,12 +5665,140 @@
               {
                 "color": "text",
                 "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": ""
               }
             ]
           },
           "unit": "percentunit"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Past"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": 1,
+                      "result": {
+                        "index": 0,
+                        "text": "🤩"
+                      },
+                      "to": 200
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 0.75,
+                      "result": {
+                        "index": 1,
+                        "text": "🤑"
+                      },
+                      "to": 1
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 0.5,
+                      "result": {
+                        "index": 2,
+                        "text": " 😁"
+                      },
+                      "to": 0.75
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 0.25,
+                      "result": {
+                        "index": 3,
+                        "text": "😀"
+                      },
+                      "to": 0.5
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 0,
+                      "result": {
+                        "index": 4,
+                        "text": "🙂"
+                      },
+                      "to": 0.25
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": -0.25,
+                      "result": {
+                        "index": 5,
+                        "text": "😐"
+                      },
+                      "to": 0
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": -0.5,
+                      "result": {
+                        "index": 6,
+                        "text": "😔 "
+                      },
+                      "to": -0.25
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": -0.75,
+                      "result": {
+                        "index": 7,
+                        "text": "😩"
+                      },
+                      "to": -0.5
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": -1,
+                      "result": {
+                        "index": 8,
+                        "text": "😢"
+                      },
+                      "to": -0.75
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": -1,
+                      "result": {
+                        "index": 9,
+                        "text": "😭"
+                      },
+                      "to": -200
+                    },
+                    "type": "range"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 4,
@@ -5710,13 +5856,24 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
+          "expression": "($Actual-$Expected)/$Expected",
+          "hide": false,
+          "refId": "Past",
+          "type": "math"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
           "expression": "($Expected-$Actual)/0.012",
           "hide": false,
-          "refId": "B",
+          "refId": "Future",
           "type": "math"
         }
       ],
-      "title": "Short Sentiment",
+      "title": "Sentiment",
       "type": "stat"
     },
     {
@@ -6197,7 +6354,7 @@
           "expr": "sum(increase(livepeer_winning_tickets_recv[5y]))",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "__auto",
+          "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
         }
@@ -6386,7 +6543,7 @@
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
         }
@@ -6486,7 +6643,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
         }
@@ -6495,49 +6652,86 @@
       "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "fill": 1,
-      "fillGradient": 0,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "# Errors",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 8,
         "x": 8,
         "y": 26
       },
-      "hiddenSeries": false,
       "id": 22,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.2",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
@@ -6550,40 +6744,12 @@
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "",
+          "legendFormat": "{{label_name}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Payment Receive Errors",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "# Errors",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "datasource": {
@@ -6676,6 +6842,7 @@
           "expr": "sum(livepeer_transcoding_price)",
           "format": "time_series",
           "intervalFactor": 1,
+          "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
         }
@@ -6730,7 +6897,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -6745,7 +6913,7 @@
       "gridPos": {
         "h": 8,
         "w": 8,
-        "x": 8,
+        "x": 0,
         "y": 34
       },
       "id": 2,
@@ -6773,6 +6941,7 @@
           "expr": "sum(livepeer_suggested_gas_price)",
           "format": "time_series",
           "intervalFactor": 1,
+          "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
         }
@@ -6823,6 +6992,6 @@
   "timezone": "",
   "title": "Orchestrator Payments Overview",
   "uid": "rA7cG7DWz",
-  "version": 31,
+  "version": 35,
   "weekStart": ""
 }
