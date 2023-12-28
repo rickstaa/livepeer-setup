@@ -60,7 +60,7 @@ groups:
           panelId: 12
           noDataState: NoData
           execErrState: Error
-          for: 5m
+          for: 0s
           annotations:
             __dashboardUid__: rA7cG7DWz
             __panelId__: "12"
