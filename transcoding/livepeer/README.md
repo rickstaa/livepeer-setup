@@ -1,6 +1,6 @@
 # Main LivePeer Orchestrator Setup
 
-Welcome to the [Transcode. ninja](https://transcode.ninja] main Orchestrator Setup! In this folder, you will find a [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of the main LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
+Welcome to the [Transcode. ninja](https://transcode.ninja) main Orchestrator Setup! In this folder, you will find a [livepeer Docker Compose file](docker-compose.yml) that simplifies the deployment of the main LivePeer orchestrator. Before diving in, make sure your system checks off these prerequisites:
 
 - [Ubuntu 22.04](https://releases.ubuntu.com/jammy/) (or later).
 - [Docker](https://docs.docker.com/engine/install/ubuntu/) (optional but highly recommended).
